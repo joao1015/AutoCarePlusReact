@@ -1,0 +1,48 @@
+// src/Componentes/Cabecalho/styles.scss
+
+.cabecalho {
+    position: fixed; // Fixa o cabeçalho no topo da tela
+    top: 0; // Alinha o cabeçalho ao topo da tela
+    left: 0; // Alinha o cabeçalho à esquerda da tela
+    width: 100%; // Define a largura do cabeçalho para ocupar toda a tela
+    height: 163px; // Define a altura do cabeçalho para 163 pixels
+    background-color: #000; // Define o fundo como preto
+    color: #fff; // Define a cor do texto como branco
+    display: flex; // Usa Flexbox para centralizar o conteúdo
+    align-items: center; // Alinha verticalmente o conteúdo no centro
+    justify-content: center; // Alinha horizontalmente o conteúdo no centro
+    padding: 0 1rem; // Adiciona um pouco de espaçamento horizontal
+    box-sizing: border-box; // Inclui o padding na largura total
+    z-index: 1000; // Garante que o cabeçalho fique sobre outros elementos
+    
+    h1 {
+      margin: 0; // Remove a margem padrão do elemento h1
+      font-size: 1.5rem; // Define o tamanho da fonte do título
+      text-align: center; // Centraliza o texto
+    }
+  }
+  
+  // Adiciona um pouco de margem superior ao conteúdo da página para evitar que fique atrás do cabeçalho
+  body {
+    margin-top: 163px; // Ajusta a margem superior para a altura do cabeçalho
+  }
+  
+  // Define estilos responsivos para telas menores
+  @media (max-width: 768px) {
+    .cabecalho {
+      height: auto; // Ajusta a altura para telas menores
+      padding: 0.5rem; // Adiciona um pouco de padding
+    }
+  
+    h1 {
+      font-size: 1.2rem; // Reduz o tamanho da fonte para telas menores
+    }
+  }
+  .logo {
+    position: absolute; // Posiciona a imagem absolutamente em relação ao cabeçalho
+    left: 0; // Alinha à esquerda
+    top: 4px; // Ajusta a posição vertical da imagem
+    width: 210px; // Largura da imagem
+    height: 156px; // Altura da imagem
+    
+  }
