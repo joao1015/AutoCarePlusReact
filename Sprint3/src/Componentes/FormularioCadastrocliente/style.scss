@@ -6,23 +6,31 @@
   position: absolute; // Permite posicionar o contêiner do formulário de forma precisa
   top: 163px; // Define a posição vertical do formulário
   right: 0; // Alinha o contêiner à direita da página
-  width: 701px; // Largura do formulário
-  height: 861px; // Altura do formulário
+  border: 10px solid #000000;
   transform: translateX(0); // Ajuste a posição horizontal se necessário
+  width: 50%; // Largura do contêiner para cobrir metade da tela
+  height: 100%;
+  justify-items: center;
+  background-color: #fff;
+
 
   @media (max-width: 768px) {
     width: 90%; // Ajusta a largura para telas menores
     right: 5%; // Ajusta a posição horizontal para telas menores
     height: auto; // Permite que a altura se ajuste automaticamente
+    align-items: center;
+    
   }
 }
 
 .formulario {
-  background-color: #fff; // Fundo branco para o formulário
+background-color: #fff;
   padding: 20px; // Adiciona um pouco de padding
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Adiciona sombra para destacar o formulário
   border-radius: 8px; // Arredonda os cantos do formulário
   height: 100%; // Usa a altura total do contêiner
+  align-items: center;
+  margin-left: 1.5cm;
 
   h2 {
     margin-bottom: 20px; // Espaçamento abaixo do título
@@ -48,7 +56,7 @@
       max-width: 600px; // Largura máxima dos campos de entrada
       height: 65px; // Altura dos campos de entrada
       padding: 0 15px; // Adiciona padding horizontal
-      border: 1px solid #ddd; // Adiciona uma borda leve
+      border: 1px solid white; // Adiciona uma borda leve
       border-radius: 20px; // Arredonda os cantos dos campos de entrada com raio de 20px
       font-size: 20px; // Tamanho da fonte dos campos de entrada
       font-family: 'Poppins', sans-serif; // Fonte Poppins

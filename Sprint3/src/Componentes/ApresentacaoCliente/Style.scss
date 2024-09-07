@@ -1,0 +1,74 @@
+.texto-container {
+    position: absolute; // Posiciona o contêiner de forma precisa
+    top: 163px;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: white;
+    border: 10px solid #000000;
+    display: flex;
+    flex-direction: column;
+    align-items: center; // Centraliza os elementos horizontalmente
+    
+    span {
+      font-size: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: red;
+    }
+  
+    h1 {
+      font-size: 36px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    p {
+      font-size: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      line-height: 1.5;
+      margin-top: 20px;
+      text-align: center;
+    }
+  
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+  }
+  
+  .imagem-container {
+    display: flex; // Usa Flexbox para alinhar o conteúdo
+    justify-content: center; // Centraliza a imagem horizontalmente
+    margin-top: 20px; // Espaçamento entre o texto e a imagem
+  }
+  
+  .Iconecarro {
+    width: 167px;
+    height: 147px;
+    border-radius: 20px;
+    margin-top: 0.5cm; // Ajuste de margem para posicionar a imagem corretamente
+    
+    @media (max-width: 768px) {
+      width: 100px;
+      height: 90px;
+    }
+  }
+  
+  h2 {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-top: auto; // Empurra o h2 para a parte inferior do contêiner
+    text-align: center;
+    margin-bottom: 200px; // Ajuste para posicionar próximo ao final
+  }
+  

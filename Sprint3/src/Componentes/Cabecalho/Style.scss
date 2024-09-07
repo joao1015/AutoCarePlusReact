@@ -1,7 +1,7 @@
 // src/Componentes/Cabecalho/styles.scss
 
 .cabecalho {
-    position: fixed; // Fixa o cabeçalho no topo da tela
+    position:absolute; // Fixa o cabeçalho no topo da tela
     top: 0; // Alinha o cabeçalho ao topo da tela
     left: 0; // Alinha o cabeçalho à esquerda da tela
     width: 100%; // Define a largura do cabeçalho para ocupar toda a tela
@@ -14,7 +14,7 @@
     padding: 0 1rem; // Adiciona um pouco de espaçamento horizontal
     box-sizing: border-box; // Inclui o padding na largura total
     z-index: 1000; // Garante que o cabeçalho fique sobre outros elementos
-    
+    border: 10px solid #000000;
     h1 {
       margin: 0; // Remove a margem padrão do elemento h1
       font-size: 1.5rem; // Define o tamanho da fonte do título
