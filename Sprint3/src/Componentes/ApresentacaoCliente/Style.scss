@@ -54,13 +54,26 @@
     width: 167px;
     height: 147px;
     border-radius: 20px;
-    margin-top: 0.5cm; // Ajuste de margem para posicionar a imagem corretamente
-    
+    position: absolute; // Necessário para posicionar a animação corretamente
+    animation: moverHorizontalmente 5s infinite alternate; // Define a animação
+  
     @media (max-width: 768px) {
       width: 100px;
       height: 90px;
     }
   }
+  
+  // Define a animação que move a imagem de um lado para o outro
+  @keyframes moverHorizontalmente {
+    0% {
+      left: 0; // Posição inicial
+    }
+   
+    100% {
+      left: calc(100% - 167px); // Posição final (extremidade direita da tela)
+    }
+  }
+  
   
   h2 {
     font-size: 20px;
