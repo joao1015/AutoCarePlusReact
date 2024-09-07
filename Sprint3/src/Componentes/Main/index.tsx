@@ -1,13 +1,13 @@
 import Cabecalho from "../Cabecalho";
 import Formulario from "../FormularioCadastrocliente";
 import Rodape from "../Rodape";
-import Apresentacao from '../ApresentacaoCliente'; // Corrige a importação do componente
-
+import Apresentacao from '../ApresentacaoCliente'; 
 function Main() {
+  document.title = "Home"; 
   return (
     <div>
       <Cabecalho />
-      <Apresentacao /> {/* Utiliza o componente corretamente */}
+      <Apresentacao /> 
       <Formulario />
       <Rodape />
     </div>
