@@ -1,0 +1,26 @@
+
+
+
+
+// src/Componentes/Rodape/Style.scss
+
+.rodape {
+    position: fixed;
+    bottom: 0; // Posiciona o rodapé na parte inferior da página
+    left: 0;
+    width: 100%; // Ajuste a largura para ocupar toda a tela
+
+    height: 48px; // Altura do rodapé
+    background-color: #000; // Fundo preto
+    color: #fff; // Texto branco
+    display: flex;
+    align-items: center;
+    justify-content: center; // Centraliza o texto horizontalmente
+    font-family: 'Poppins', sans-serif; // Fonte Poppins
+    font-weight: 600; // Font weight para SemiBold
+    font-size: 26px; // Tamanho da fonte
+    box-sizing: border-box;
+    z-index: 1000;
+    margin: 0 auto; // Centraliza o rodapé horizontalmente
+  }
+  

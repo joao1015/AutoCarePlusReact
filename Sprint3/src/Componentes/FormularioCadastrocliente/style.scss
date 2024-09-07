@@ -1,0 +1,87 @@
+// src/Componentes/Formulario/Style.scss
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap'); // Importa a fonte Poppins Medium
+
+.formulario-container {
+  position: absolute; // Permite posicionar o contêiner do formulário de forma precisa
+  top: 163px; // Define a posição vertical do formulário
+  right: 0; // Alinha o contêiner à direita da página
+  width: 701px; // Largura do formulário
+  height: 861px; // Altura do formulário
+  transform: translateX(0); // Ajuste a posição horizontal se necessário
+
+  @media (max-width: 768px) {
+    width: 90%; // Ajusta a largura para telas menores
+    right: 5%; // Ajusta a posição horizontal para telas menores
+    height: auto; // Permite que a altura se ajuste automaticamente
+  }
+}
+
+.formulario {
+  background-color: #fff; // Fundo branco para o formulário
+  padding: 20px; // Adiciona um pouco de padding
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Adiciona sombra para destacar o formulário
+  border-radius: 8px; // Arredonda os cantos do formulário
+  height: 100%; // Usa a altura total do contêiner
+
+  h2 {
+    margin-bottom: 20px; // Espaçamento abaixo do título
+    font-size: 26px; // Tamanho da fonte do título
+    font-family: 'Poppins', sans-serif; // Fonte Poppins
+    font-weight: 600; // Peso da fonte semi-bold
+    text-align: center; // Centraliza o título
+  }
+
+  .form-group {
+    margin-bottom: 20px; // Espaçamento entre os campos do formulário
+
+    label {
+      display: block; // Faz o rótulo ocupar a linha inteira
+      margin-bottom: 8px; // Espaçamento abaixo do rótulo
+      font-size: 20px; // Tamanho da fonte do rótulo
+      font-family: 'Poppins', sans-serif; // Fonte Poppins
+      font-weight: 500; // Peso da fonte medium
+    }
+
+    input {
+      width: 100%; // Faz os campos de entrada ocuparem toda a largura disponível
+      max-width: 600px; // Largura máxima dos campos de entrada
+      height: 65px; // Altura dos campos de entrada
+      padding: 0 15px; // Adiciona padding horizontal
+      border: 1px solid #ddd; // Adiciona uma borda leve
+      border-radius: 20px; // Arredonda os cantos dos campos de entrada com raio de 20px
+      font-size: 20px; // Tamanho da fonte dos campos de entrada
+      font-family: 'Poppins', sans-serif; // Fonte Poppins
+      font-weight: 500; // Peso da fonte medium
+      background-color: #B0BAC3; // Cor de fundo dos campos de entrada
+      box-sizing: border-box; // Inclui o padding na largura e altura totais
+
+      &::placeholder {
+        color: #fff; // Cor do texto do placeholder
+        opacity: 0.8; // Opacidade do texto do placeholder
+      }
+    }
+
+    button {
+      width: 100%; // Faz o botão ocupar toda a largura disponível
+      max-width: 600px; // Largura máxima do botão
+      height: 65px; // Altura do botão
+      padding: 0 15px; // Adiciona padding horizontal
+      background-color: #007bff; // Cor de fundo do botão
+      color: #fff; // Cor do texto do botão
+      border: none; // Remove a borda padrão
+      border-radius: 20px; // Arredonda os cantos do botão com raio de 20px
+      font-size: 20px; // Tamanho da fonte do botão
+      font-family: 'Poppins', sans-serif; // Fonte Poppins
+      font-weight: 500; // Peso da fonte medium
+      cursor: pointer; // Muda o cursor para uma mãozinha ao passar sobre o botão
+      display: flex;
+      align-items: center;
+      justify-content: center; // Centraliza o texto no botão
+
+      &:hover {
+        background-color: #0056b3; // Altera a cor do fundo ao passar o mouse sobre o botão
+      }
+    }
+  }
+}

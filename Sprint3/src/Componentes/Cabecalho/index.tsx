@@ -6,7 +6,7 @@ function Cabecalho() {
   return (
     <header className="cabecalho">
       <img src={logo} alt="Logo do Aplicativo" className="logo" />
-      <h1>Bem-vindo ao Aplicativo</h1>
+      
     </header>
   );
 }
