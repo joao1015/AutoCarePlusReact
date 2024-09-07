@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import '../FormularioEntrar/style.scss';
 
 function Login() {
   // Estado para armazenar o email e a senha digitados pelo usuário
@@ -24,10 +24,11 @@ function Login() {
   };
 
   return (
-    <div className="formulario-container"> {/* Reutilizando o container do formulário */}
-      <form className="formulario" onSubmit={handleLogin}> {/* Reutilizando a classe do formulário */}
-        <h2>Faça o Login</h2>
-        <div className="form-group"> {/* Reutilizando o grupo de formulários */}
+    <div className="logado"> {/* Reutilizando o container do formulário */}
+      <form className="balao" onSubmit={handleLogin}> {/* Reutilizando a classe do formulário */}
+        <h2>Acessa conta - Preencha seus dados
+        de acesso para continuar</h2>
+        <div className="form"> {/* Reutilizando o grupo de formulários */}
           <label htmlFor="email">Email</label>
           <input
             type="email"
@@ -38,7 +39,7 @@ function Login() {
             required
           />
         </div>
-        <div className="form-group"> {/* Reutilizando o grupo de formulários */}
+        <div className="form"> {/* Reutilizando o grupo de formulários */}
           <label htmlFor="senha">Senha</label>
           <input
             type="password"
@@ -49,7 +50,7 @@ function Login() {
             required
           />
         </div>
-        <button type="submit">Login</button> {/* Reutilizando o estilo do botão */}
+        <button className='logar' type="submit">Entrar</button > 
       </form>
     </div>
   );

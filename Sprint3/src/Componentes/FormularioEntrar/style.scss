@@ -1,0 +1,97 @@
+// src/Componentes/Formulario/Style.scss
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap'); // Importa a fonte Poppins Medium
+
+.logado {
+    position: absolute; // Permite posicionar o contêiner do formulário de forma precisa
+    top: 163px; // Define a posição vertical do formulário
+    right: 0; // Alinha o contêiner à direita da página
+    border: 10px solid #000000;
+    transform: translateX(0); // Ajuste a posição horizontal se necessário
+    width: 100%; // Largura do contêiner para cobrir metade da tela
+    height: 100%;
+    justify-items: center;
+    background-color: #fff;}
+
+
+    .balao {
+        background-color: #ffffff; // Cor de fundo
+        padding: 20px; // Adiciona um pouco de padding
+        
+        height: 100%; // Usa a altura total do contêiner
+        width: 50%;
+        align-items: center; // Alinha os itens dentro do contêiner
+        margin-left: 10cm; // Margem esquerda
+      
+        // Adiciona a borda
+       
+        // Outras propriedades relacionadas ao layout
+        box-sizing: border-box; // Inclui padding e borda no cálculo da largura e altura
+      }
+      
+     
+        
+          h2 {
+            margin-bottom: 20px; // Espaçamento abaixo do título
+            font-size: 26px; // Tamanho da fonte do título
+            font-family: 'Poppins', sans-serif; // Fonte Poppins
+            font-weight: 600; // Peso da fonte semi-bold
+            text-align: center; // Centraliza o título
+          
+          }
+        
+          .form {
+            margin-bottom: 20px; // Espaçamento entre os campos do formulário
+        
+            label {
+              display: block; // Faz o rótulo ocupar a linha inteira
+              margin-bottom: 8px; // Espaçamento abaixo do rótulo
+              font-size: 20px; // Tamanho da fonte do rótulo
+              font-family: 'Poppins', sans-serif; // Fonte Poppins
+              font-weight: 500; // Peso da fonte medium
+            }
+        
+            input {
+              width: 100%; // Faz os campos de entrada ocuparem toda a largura disponível
+              max-width: 600px; // Largura máxima dos campos de entrada
+              height: 65px; // Altura dos campos de entrada
+              padding: 0 15px; // Adiciona padding horizontal
+              border: 1px solid white; // Adiciona uma borda leve
+              border-radius: 20px; // Arredonda os cantos dos campos de entrada com raio de 20px
+              font-size: 20px; // Tamanho da fonte dos campos de entrada
+              font-family: 'Poppins', sans-serif; // Fonte Poppins
+              font-weight: 500; // Peso da fonte medium
+              background-color: #B0BAC3; // Cor de fundo dos campos de entrada
+              box-sizing: border-box; // Inclui o padding na largura e altura totais
+        margin-left:1cm ;
+              &::placeholder {
+                color: #fff; // Cor do texto do placeholder
+                opacity: 0.8; // Opacidade do texto do placeholder
+              }
+            }
+        
+            
+          }
+        /* No arquivo style.scss */
+        .logar {
+            font-family: 'Poppins', sans-serif; // Certifique-se de que a fonte Poppins está importada corretamente
+            font-weight: 400; // Semi-bold, 600 é um valor comum para semi-bold
+            font-size: 26px; // Tamanho da fonte
+            width: 301.45px; // Largura do botão
+            height: 40px; // Altura do botão
+            background-color: #000000; // Cor de fundo (ajuste conforme necessário)
+            color: #ffffff; // Cor do texto (ajuste conforme necessário)
+            border: none; // Remove bordas padrão
+            border-radius: 8px; // Arredondar os cantos do botão
+            padding: 10px; // Adiciona padding interno (opcional)
+            cursor: pointer; // Muda o cursor para indicar que é clicável
+            text-align: center; // Alinha o texto ao centro
+            line-height: 4px; // Alinha verticalmente o texto, ajusta conforme necessário
+            transition: background-color 0.3s; // Adiciona uma transição suave para mudanças de cor
+          margin-left: 4.5cm;
+            // Adiciona um efeito de foco (opcional)
+            &:hover {
+              background-color: #0056b3; // Cor de fundo ao passar o mouse (ajuste conforme necessário)
+            }
+          }
+          
