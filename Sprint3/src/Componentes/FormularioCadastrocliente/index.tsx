@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 // Styled Component para o contêiner principal do formulário
 const FormularioContainer = styled.div`
@@ -113,6 +114,7 @@ function Formulario() {
   const [nome, setNome] = useState('');
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const navigate = useNavigate(); // Hook para navegação
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -144,7 +146,7 @@ function Formulario() {
     };
 // No seu handleSubmit
 localStorage.setItem('usuarioLogado', JSON.stringify(novoUsuario));
-        
+
     // Adiciona o novo usuário à lista de usuários cadastrados
     usuariosCadastrados.push(novoUsuario);
     localStorage.setItem('usuarios', JSON.stringify(usuariosCadastrados));
@@ -155,6 +157,7 @@ localStorage.setItem('usuarioLogado', JSON.stringify(novoUsuario));
     setSenha('');
 
     alert('Conta criada com sucesso!');
+    navigate("/Logado");
   };
 
 
