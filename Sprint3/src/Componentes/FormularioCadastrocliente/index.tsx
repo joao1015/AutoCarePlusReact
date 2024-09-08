@@ -79,13 +79,13 @@ const Input = styled.input`
 // Styled Component para o botão de criação de conta
 const Button = styled.button`
   width: 100%;
-  max-width: 600px;
-  height: 65px;
+  max-width: 301px;
+  height: 40px;
   padding: 0 15px;
-  background-color: #007bff;
+  background-color: #000000;
   color: #fff;
   border: none;
-  border-radius: 20px;
+  border-radius: 10px;
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
@@ -93,6 +93,7 @@ const Button = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left:4cm;
 
   &:hover {
     background-color: #0056b3;
@@ -112,20 +113,44 @@ function Formulario() {
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const usuario = {
+    // Recupera os usuários já cadastrados do localStorage ou define um array vazio
+    const usuariosCadastrados = JSON.parse(localStorage.getItem('usuarios') || '[]');
+
+    // Verifica se o e-mail já está cadastrado
+    const emailJaCadastrado = usuariosCadastrados.some((usuario: { email: string }) => usuario.email === email);
+
+    if (emailJaCadastrado) {
+      alert('E-mail já está sendo usado.');
+      return;
+    }
+
+    // Verifica se o usuário já está cadastrado pelo nome (ou altere para outra lógica se necessário)
+    const usuarioJaCadastrado = usuariosCadastrados.some((usuario: { nome: string }) => usuario.nome === nome);
+
+    if (usuarioJaCadastrado) {
+      alert('Usuário já cadastrado.');
+      return;
+    }
+
+    // Cria um novo usuário
+    const novoUsuario = {
       nome,
       email,
       senha,
     };
 
-    localStorage.setItem('usuario', JSON.stringify(usuario));
+    // Adiciona o novo usuário à lista de usuários cadastrados
+    usuariosCadastrados.push(novoUsuario);
+    localStorage.setItem('usuarios', JSON.stringify(usuariosCadastrados));
 
+    // Limpa os campos do formulário
     setNome('');
     setEmail('');
     setSenha('');
 
     alert('Conta criada com sucesso!');
   };
+
 
   return (
     <FormularioContainer>
