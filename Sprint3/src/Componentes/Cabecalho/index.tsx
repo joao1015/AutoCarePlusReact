@@ -18,6 +18,8 @@ const CabecalhoContainer = styled.header`
   padding: 0 1rem;
   box-sizing: border-box;
   z-index: 1000;
+  
+
 `;
 
 // Styled Component para a logo
