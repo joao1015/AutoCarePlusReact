@@ -5,6 +5,7 @@ import Cabecalho from '../../Componentes/Cabecalho';
 import Rodape from '../../Componentes/Rodape';
 import Sidebar from '../../Componentes/SideBar';
 import { useNavigate } from 'react-router-dom'; // Para redirecionar após o logout
+import Chatbot from '../../Componentes/InteracaoIA';
 
 interface Usuario {
   nome: string;
@@ -31,7 +32,7 @@ const PaginaLogada: React.FC = () => {
       <ConteudoPrincipal>
         {/* Conteúdo principal */}
         <main>
-          {/* Adicione aqui o conteúdo da página */}
+          <Chatbot></Chatbot>
         </main>
       </ConteudoPrincipal>
       <Rodape />
