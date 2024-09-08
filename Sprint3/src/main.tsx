@@ -1,12 +1,13 @@
 // src/index.tsx
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'; // Importa o BrowserRouter e as rotas
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importa o BrowserRouter e as rotas
 import App from './App.tsx';
 import './index.css';
 import Home from './Componentes/Main/index.tsx'; // Atualize o caminho conforme necessário
 import Sobrenos from './routes/SobreNos/index.tsx'; // Atualize o caminho conforme necessário
 import Cadastrados from './routes/Entrar/index.tsx';
+import Logado from './routes/Logado/index.tsx';
 
 // Cria a raiz do React
 const root = createRoot(document.getElementById('root')!);
@@ -19,6 +20,7 @@ root.render(
         <Route path="/home" element={<Home />} /> {/* Página Home */}
         <Route path="/sobrenos" element={<Sobrenos />} /> {/* Página Sobre Nós */}
         <Route path="/entrar" element={<Cadastrados />} /> {/* Página de Login */}
+        <Route path="/Logado" element={<Logado />} /> {/* Página logado */}
       </Routes>
     </Router>
   </StrictMode>

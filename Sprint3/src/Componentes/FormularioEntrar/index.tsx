@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Importa o hook para navegação
 import styled from 'styled-components';
 
 // Styled Component para o contêiner principal
@@ -13,7 +14,7 @@ const Logado = styled.div`
   background-color: #fff;
 `;
 
-// Styled Component para o formulário (balao)
+// Styled Component para o formulário (balão)
 const Balao = styled.form`
   background-color: #ffffff;
   padding: 20px;
@@ -95,19 +96,25 @@ function Login() {
   // Estado para armazenar o email e a senha digitados pelo usuário
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const navigate = useNavigate(); // Hook para navegação
 
   // Função que lida com o envio do formulário de login
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); // Evita o comportamento padrão de recarregar a página
 
-    // Recupera os dados do usuário armazenados no localStorage com verificação de null
-    const usuarioData = localStorage.getItem('usuario');
-    const usuario = usuarioData ? JSON.parse(usuarioData) : null;
+    // Recupera os dados dos usuários armazenados no localStorage com verificação de null
+    const usuariosData = localStorage.getItem('usuarios');
+    const usuarios = usuariosData ? JSON.parse(usuariosData) : [];
 
     // Verifica se os dados do usuário correspondem aos fornecidos no formulário
-    if (usuario && usuario.email === email && usuario.senha === senha) {
+    const usuario = usuarios.find(
+      (u: { email: string; senha: string }) => u.email === email && u.senha === senha
+    );
+
+    if (usuario) {
       alert('Login bem-sucedido!');
-      // Adicione aqui a lógica adicional após um login bem-sucedido, como redirecionamento
+      // Redireciona para a página logado após login bem-sucedido
+      navigate("/Logado");
     } else {
       alert('Email ou senha incorretos.'); // Mensagem de erro se os dados não corresponderem
     }

@@ -102,7 +102,11 @@ const Button = styled.button`
 
 // Styled Component para o link de login
 const LinkStyled = styled.p`
-  color: #007bff;
+  color: #000000;
+  font-size: medium;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  text-decoration: none; 
 `;
 
 function Formulario() {
@@ -138,7 +142,9 @@ function Formulario() {
       email,
       senha,
     };
-
+// No seu handleSubmit
+localStorage.setItem('usuarioLogado', JSON.stringify(novoUsuario));
+        
     // Adiciona o novo usuário à lista de usuários cadastrados
     usuariosCadastrados.push(novoUsuario);
     localStorage.setItem('usuarios', JSON.stringify(usuariosCadastrados));
@@ -191,7 +197,7 @@ function Formulario() {
         </FormGroup>
         <Button type="submit">Criar Conta</Button>
         <LinkStyled>
-          Já tem uma conta? <Link to="/entrar">Faça login</Link>
+        Já tem uma conta?  <Link to="/entrar">Entrar</Link>
         </LinkStyled>
       </FormularioStyled>
     </FormularioContainer>
