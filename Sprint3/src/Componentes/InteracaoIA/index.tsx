@@ -12,7 +12,7 @@ const ChatContainer = styled.div`
   margin: 2rem auto;
   padding: 20px;
   border: 2px solid #4a90e2;
-  border-radius: 12px;
+  border-radius: 19px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   height: 500px;
@@ -25,32 +25,41 @@ const ChatHeader = styled.div`
   width: 100%;
   background-color: #4a90e2;
   color: white;
-  padding: 10px;
+  font-family: 'Poppins', sans-serif;
+  padding: 30px;
   border-radius: 12px 12px 0 0;
   text-align: center;
   font-size: 18px;
   font-weight: bold;
+  margin-top: -0.5cm;
+
 `;
 
 // Estilos para o corpo do chatbot
 const ChatBody = styled.div`
+  width: 100%;
   flex: 1;
   overflow-y: auto;
   padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 0 0 12px 12px;
+  border-radius: 
+  12px;
   background-color: #f9f9f9;
-  height: calc(100% - 80px);
+  height: 150%;
+  margin-top: 2cm;
 `;
 
 // Estilos para a entrada do usuário
 const ChatInputContainer = styled.div`
+  width: 100%;
   display: flex;
+  font-family: 'Poppins', sans-serif;
   padding: 10px;
   border-top: 1px solid #ddd;
   background-color: #fff;
-  border-radius: 0 0 12px 12px;
+  border-radius: 40 40 40px 40px;
   align-items: center;
+  margin-top: 1cm;
 `;
 
 // Estilos para o campo de entrada
@@ -61,9 +70,10 @@ const Input = styled.input`
   border-radius: 5px;
   font-size: 16px;
   outline: none;
-
+  font-family: 'Poppins', sans-serif;
   &:focus {
     border-color: #4a90e2;
+    
   }
 `;
 
@@ -76,6 +86,7 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
+  font-family: 'Poppins', sans-serif;
   margin-left: 10px;
 
   &:hover {
