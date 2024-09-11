@@ -13,6 +13,7 @@ const CredenciadaContainer = styled.div`
   height: 100%;
   width: 80%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+margin-top: 4cm;
 `;
 
 const Title = styled.h1`

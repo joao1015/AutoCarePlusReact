@@ -7,8 +7,10 @@ function OficinasLogadas (){
 
 
 return(
-    <div><Cabecalho></Cabecalho>
+    <div>
+    <Cabecalho></Cabecalho>
     
+    <Credenciada></Credenciada>
    
     <Rodape></Rodape>
 
