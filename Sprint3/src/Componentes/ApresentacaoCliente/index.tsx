@@ -1,5 +1,5 @@
 // src/Componentes/Texto/index.tsx
-import React from 'react';
+
 import styled, { keyframes } from 'styled-components';
 import Icone from './imagens/Icone de carro.png'; // Substitua pelo caminho correto da sua imagem
 

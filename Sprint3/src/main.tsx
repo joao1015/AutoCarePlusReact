@@ -1,26 +1,38 @@
 // src/index.tsx
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Importa o BrowserRouter e as rotas
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App.tsx';
 import './index.css';
-import Home from './Componentes/Main/index.tsx'; // Atualize o caminho conforme necessário
-import Sobrenos from './routes/SobreNos/index.tsx'; // Atualize o caminho conforme necessário
+import Home from './Componentes/Main/index.tsx'; 
+import Sobrenos from './routes/SobreNos/index.tsx'; 
 import Cadastrados from './routes/Entrar/index.tsx';
 import Logado from './routes/Logado/index.tsx';
+import Chatbot from './Componentes/InteracaoIA/index.tsx'; 
+import Agenda from './routes/Agendamentooficinas/index.tsx'; 
+import OF from './routes/OficinasLogin'; 
+import OFL from './routes/OficinasLogada/index.tsx'; 
+
+
+
+
 
 // Cria a raiz do React
 const root = createRoot(document.getElementById('root')!);
 
 root.render(
   <StrictMode>
-    <Router> {/* Adiciona o Router para gerenciar as rotas */}
+    <Router>
       <Routes>
         <Route path="/" element={<App />} /> {/* Página inicial */}
         <Route path="/home" element={<Home />} /> {/* Página Home */}
         <Route path="/sobrenos" element={<Sobrenos />} /> {/* Página Sobre Nós */}
         <Route path="/entrar" element={<Cadastrados />} /> {/* Página de Login */}
         <Route path="/Logado" element={<Logado />} /> {/* Página logado */}
+        <Route path="/chatbot" element={<Chatbot />} /> {/* Caminho ajustado para o chatbot */}
+        <Route path="/Orcamentos" element={<Agenda />} /> {/* Caminho ajustado para a Agenda */}
+        <Route path="/lOGINoFICINAS" element={<OF />} /> {/* Caminho ajustado para a Agenda */}
+        <Route path="/Pagina_da_credenciada" element={<OFL />} /> {/* Caminho ajustado para a Agenda */}
       </Routes>
     </Router>
   </StrictMode>

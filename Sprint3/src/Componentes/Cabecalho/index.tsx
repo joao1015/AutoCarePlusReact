@@ -18,8 +18,13 @@ const CabecalhoContainer = styled.header`
   padding: 0 1rem;
   box-sizing: border-box;
   z-index: 1000;
-  
+`;
 
+// Styled Component para o Link do cabeçalho
+const CabecalhoLink = styled(Link)`
+  text-decoration: none;
+  display: flex;
+  width: 100%;
 `;
 
 // Styled Component para a logo
@@ -85,19 +90,20 @@ interface CabecalhoProps {
 
 const Cabecalho: React.FC<CabecalhoProps> = ({ usuario }) => {
   return (
-    <CabecalhoContainer>
-      <Logo src={logo} alt="Logo do Aplicativo" />
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <SobreNosButton to="/sobrenos">Sobre Nós</SobreNosButton>
-        {usuario && (
-          <UsuarioInfo>
-            {usuario.avatarUrl && <Avatar src={usuario.avatarUrl} alt="Avatar do Usuário" />}
-            <Nome>{usuario.nome}</Nome>
-          </UsuarioInfo>
-        )}
-      
-      </div>
-    </CabecalhoContainer>
+    <CabecalhoLink to="/lOGINoFICINAS"> {/* Substitua "/pagina-desejada" pelo caminho da página para onde deseja redirecionar */}
+      <CabecalhoContainer>
+        <Logo src={logo} alt="Logo do Aplicativo" />
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <SobreNosButton to="/sobrenos">Sobre Nós</SobreNosButton>
+          {usuario && (
+            <UsuarioInfo>
+              {usuario.avatarUrl && <Avatar src={usuario.avatarUrl} alt="Avatar do Usuário" />}
+              <Nome>{usuario.nome}</Nome>
+            </UsuarioInfo>
+          )}
+        </div>
+      </CabecalhoContainer>
+    </CabecalhoLink>
   );
 };
 

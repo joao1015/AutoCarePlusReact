@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import icone from './Imagens/ia.png';  // Avatar do Chatbot
 import userAvatar from './Imagens/usuario.png';  // Avatar do Usuário
+import { useNavigate } from 'react-router-dom';
 
 // Estilos para o contêiner principal do chatbot
 const ChatContainer = styled.div`
@@ -146,6 +147,7 @@ const Chatbot: React.FC = () => {
   const [messages, setMessages] = useState<{ text: string; isUser: boolean; name: string }[]>([]);
   const [context, setContext] = useState<any>({});
   const chatBodyRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate(); // Hook para navegação
 
   useEffect(() => {
     if (chatBodyRef.current) {
@@ -153,25 +155,13 @@ const Chatbot: React.FC = () => {
     }
   }, [messages]);
 
-  const handleSubmit = async (event: React.FormEvent) => {
-    event.preventDefault();
-
-    if (!message.trim()) return;
-
-    // Adiciona a mensagem do usuário com o nome "Usuário"
-    setMessages((prevMessages) => [
-      ...prevMessages,
-      { text: message, isUser: true, name: 'Usuário' },
-    ]);
-    setMessage('');
-
+  const sendMessageToWatson = async (text: string) => {
     try {
-      // Envia a mensagem para a API do Watson Assistant
       const response = await axios.post<WatsonResponse>(
         'https://api.us-south.assistant.watson.cloud.ibm.com/v1/workspaces/f57c7ad1-958a-4dab-84fc-fa203e8c1efe/message?version=2021-06-14',
         {
           input: {
-            text: message,
+            text,
           },
           context: context,
         },
@@ -179,27 +169,17 @@ const Chatbot: React.FC = () => {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Basic ${btoa('apikey:r_suOM3Fo1tcsPUKukbkHjkltOBjiJGYFdPx2mtIHb-8')}`,
-          },
+          }
         }
       );
 
-      console.log('Resposta da API:', response.data);
-
-      // Atualiza o contexto da conversa
       setContext(response.data.context);
 
-      // Extrai a resposta textual do Watson
       const responseText = response.data.output.generic
-        .map((item: GenericItem) => {
-          if (item.response_type === 'text' && item.text) {
-            return item.text;
-          }
-          return '';
-        })
+        .map((item: GenericItem) => (item.response_type === 'text' && item.text ? item.text : ''))
         .filter((text) => text)
         .join(' ');
 
-      // Adiciona a resposta da IA com o nome "AutoCarePlus"
       setMessages((prevMessages) => [
         ...prevMessages,
         { text: responseText || 'Sem resposta', isUser: false, name: 'AutoCarePlus' },
@@ -213,16 +193,32 @@ const Chatbot: React.FC = () => {
     }
   };
 
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!message.trim()) return;
+
+    setMessages((prevMessages) => [
+      ...prevMessages,
+      { text: message, isUser: true, name: 'Usuário' },
+    ]);
+
+    await sendMessageToWatson(message);
+    setMessage('');
+  };
+
+  // Função para navegar para a página de agendamento
+  const handleNext = () => {
+    const lastMessage = messages.at(-1)?.text || '';
+    navigate('/Orcamentos', { state: { lastMessage } });
+  };
+
   return (
     <ChatContainer>
-      
-      <ChatHeader>Inteligencia Artificial AutoCarePlus</ChatHeader>
-
-      
+      <ChatHeader>Inteligência Artificial AutoCarePlus</ChatHeader>
       <ChatBody ref={chatBodyRef}>
         {messages.map((msg, index) => (
           <MessageContainer key={index} isUser={msg.isUser}>
-            <Avatar src={msg.isUser ? userAvatar : icone} alt={msg.isUser ? "User Avatar" : "Chatbot Avatar"} isUser={msg.isUser} />
+            <Avatar src={msg.isUser ? userAvatar : icone} alt={msg.isUser ? 'User Avatar' : 'Chatbot Avatar'} isUser={msg.isUser} />
             <Message isUser={msg.isUser}>{msg.text}</Message>
           </MessageContainer>
         ))}
@@ -232,10 +228,11 @@ const Chatbot: React.FC = () => {
           type="text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Digite sua mensagem"
+          placeholder="Digite sua mensagem..."
         />
         <Button onClick={handleSubmit}>Enviar</Button>
       </ChatInputContainer>
+      <Button onClick={handleNext} style={{ marginTop: '10px' }}>Next</Button>
     </ChatContainer>
   );
 };
