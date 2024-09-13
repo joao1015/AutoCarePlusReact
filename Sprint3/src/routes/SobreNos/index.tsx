@@ -1,4 +1,4 @@
-import React from 'react';
+
 import Cabecalho from '../../Componentes/Cabecalho';
 import Rodape from '../../Componentes/Rodape';
 import styled from 'styled-components';
@@ -18,7 +18,7 @@ const ProfileStory = styled.span`
   box-sizing: border-box;
   white-space: normal;
   font-family: 'Poppins', sans-serif;
-  border: 1px solid red; /* Adiciona uma borda vermelha para teste */
+  border: 1px solid black; /* Adiciona uma borda vermelha para teste */
   z-index: 10; /* Garante que o elemento fique na frente */
   top: 100%; /* Ajuste a posição do ProfileStory para que fique visível */
   left: 50%;
@@ -30,7 +30,7 @@ const ProfileStory = styled.span`
 const Main = styled.main`
   padding: 36px;
   text-align: center;
-  background-color: #ddd1d1;
+  background-color: #ffffff;
   color: rgb(0, 0, 0);
   font-family: 'Poppins', sans-serif;
   margin-top: 2cm;
@@ -140,7 +140,7 @@ function Sobrenos() {
 
         <Container>
           <BoxesContainer>
-            {/* Perfil 1 - Arthur Bispo */}
+            
             <ProfileContainer role="complementary">
               <ProfileImg src={Arthur} alt="foto do Arthur Bispo" className="profile-img" />
               <ProfileStory>

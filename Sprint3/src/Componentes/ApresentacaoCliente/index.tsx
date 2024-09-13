@@ -1,112 +1,116 @@
-// src/Componentes/Texto/index.tsx
 
-import styled, { keyframes } from 'styled-components';
-import Icone from './imagens/Icone de carro.png'; // Substitua pelo caminho correto da sua imagem
+import styled from 'styled-components';
 
-// Animação para mover a imagem horizontalmente
-const moverHorizontalmente = keyframes`
-  0% {
-    left: 0;
-  }
-  100% {
-    left: calc(100% - 167px);
-  }
+// Estilização dos componentes
+const Container = styled.div`
+  font-family: 'Poppins', sans-serif;
+  padding: 0 2rem;
 `;
 
-// Styled Component para o contêiner de texto
-const TextoContainer = styled.div`
-  position: absolute;
-  top: 163px;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  padding: 20px;
-  box-sizing: border-box;
-  background-color: white;
-  border: 10px solid #000000;
+const HeroSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: -1.9cm;
+  padding: 4rem 0;
+  text-align: center;
+  background: url('/path/to/hero-image.jpg') no-repeat center center/cover;
+  color: #406a34;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff;
+  width: 100%;
 
-
-  span {
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: red;
-  }
-
-  h1 {
-    font-size: 36px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center;
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
   p {
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
-    line-height: 1.5;
-    margin-top: 20px;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  }
+
+  
+`;
+
+const FeaturesSection = styled.section`
+  padding: 3rem 0;
+  background-color: #f9f9f9;
+
+  h3 {
     text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
   }
 
-  @media (max-width: 768px) {
-    width: 100%;
-    height: auto;
-    padding: 10px;
+  .features {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .feature {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.5rem;
+    width: 80%;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    h4 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #666;
+    }
   }
 `;
 
-// Styled Component para o contêiner da imagem
-const ImagemContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-`;
-
-// Styled Component para a imagem do carro
-const IconeCarro = styled.img`
-  width: 167px;
-  height: 147px;
-  border-radius: 20px;
-  position: absolute;
-  animation: ${moverHorizontalmente} 5s infinite alternate;
-
-  @media (max-width: 768px) {
-    width: 100px;
-    height: 90px;
-  }
-`;
-
-// Styled Component para o subtítulo
-const Subtitulo = styled.h2`
-  font-size: 20px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  line-height: 1.5;
-  margin-top: auto;
-  text-align: center;
-  margin-bottom: 200px;
-`;
-
-function Texto() {
+// Componente Principal
+const HomePage = () => {
   return (
-    <TextoContainer>
-      <h1>Está com problemas no seu veículo?</h1>
-      <p>
-        <span>Não se preocupe! Com a AutoCarePlus,</span> você pode diagnosticar falhas em segundos e agendar serviços de onde estiver
-      </p>
-      <ImagemContainer>
-        <IconeCarro src={Icone} alt="Ícone do Carro" />
-      </ImagemContainer>
-      <Subtitulo>Bem-vindo ao novo jeito de cuidar do seu carro!</Subtitulo>
-    </TextoContainer>
+    <Container>
+      <HeroSection>
+        <h2>Revolucione sua Oficina com Metamind</h2>
+        <p>Transforme a gestão e atendimento da sua oficina com nossa solução digital moderna e acessível.</p>
+        
+      </HeroSection>
+      <FeaturesSection id="features">
+        <h3>Funcionalidades Principais</h3>
+        <div className="features">
+          <div className="feature">
+            <h4>Orçamento Automático</h4>
+            <p>Gerencie orçamentos de forma autônoma com nossa ferramenta de orçamento automatizado.</p>
+          </div>
+          <div className="feature">
+            <h4>Gestão Simplificada</h4>
+            <p>Integre a compra de peças, emissão de notas fiscais e gestão de garantias em um único lugar.</p>
+          </div>
+          <div className="feature">
+            <h4>Marketing Integrado</h4>
+            <p>Impulsione a visibilidade da sua oficina e atraia mais clientes com nosso serviço de marketing.</p>
+          </div>
+          <div className="feature">
+            <h4>Valorização da Mão de Obra</h4>
+            <p>Destaque a qualidade e especialização dos seus serviços para atrair mais negócios.</p>
+          </div>
+        </div>
+      </FeaturesSection>
+    </Container>
   );
-}
+};
 
-export default Texto;
+export default HomePage;

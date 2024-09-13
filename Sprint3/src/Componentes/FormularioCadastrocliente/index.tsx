@@ -5,10 +5,12 @@ import { useNavigate } from 'react-router-dom';
 
 // Styled Component para o contêiner principal do formulário
 const FormularioContainer = styled.div`
-  position: absolute;
+ background-color: #F3F4F6;
+ 
+ position: absolute;
   top: 163px;
   right: 0;
-  border: 10px solid #000000;
+  border-left: 10px solid #000000;
   transform: translateX(0);
   width: 50%;
   height: 100%;
@@ -83,7 +85,7 @@ const Button = styled.button`
   max-width: 301px;
   height: 40px;
   padding: 0 15px;
-  background-color: #000000;
+  background-color: #10B981;
   color: #fff;
   border: none;
   border-radius: 10px;
@@ -109,6 +111,10 @@ const LinkStyled = styled.p`
   font-size: 18px;
   text-decoration: none; 
 `;
+
+
+
+
 
 function Formulario() {
   const [nome, setNome] = useState('');

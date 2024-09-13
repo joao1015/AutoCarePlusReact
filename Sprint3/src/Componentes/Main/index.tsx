@@ -12,10 +12,7 @@ function Main() {
       <header>
       <Cabecalho />
       </header>
-      <main>
-      <Apresentacao /> 
-      <Formulario />
-      </main>
+     <Apresentacao></Apresentacao>
       <footer>
       <Rodape />
       </footer>

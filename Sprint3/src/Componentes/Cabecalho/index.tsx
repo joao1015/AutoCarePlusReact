@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styled from 'styled-components';
-import logo from './Imagems/LogoAutoCareplus.png'; // Substitua pelo caminho correto da sua imagem
-import { Link } from 'react-router-dom';
+import logo from './Imagems/LogoAutoCareplus.png';
+import { Link, NavLink } from 'react-router-dom';
+import { FiMenu, FiHome, FiInfo, FiTool, FiUser } from 'react-icons/fi';
+import { FaCar } from 'react-icons/fa';
 
-// Styled Component para o cabeçalho
+// Styled Components corrigidos
 const CabecalhoContainer = styled.header`
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 2.5cm;
-  background-color: #000;
+  width: 101%;
+  height: 2cm;
+  background-color: #A3DFF6;
   color: #fff;
   display: flex;
   align-items: center;
@@ -18,92 +20,195 @@ const CabecalhoContainer = styled.header`
   padding: 0 1rem;
   box-sizing: border-box;
   z-index: 1000;
-`;
-
-// Styled Component para o Link do cabeçalho
-const CabecalhoLink = styled(Link)`
-  text-decoration: none;
-  display: flex;
-  width: 100%;
-`;
-
-// Styled Component para a logo
-const Logo = styled.img`
-  height: 100%;
-  object-fit: contain;
-`;
-
-// Styled Component para o botão "Sobre Nós"
-const SobreNosButton = styled(Link)`
-  padding: 10px 20px;
-  background-color: #ffffff;
-  color: #000000;
-  text-decoration: none;
-  border-radius: 5px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  font-size: 16px;
-  display: inline-block;
-  transition: background-color 0.3s;
-  margin-left: auto;
+  border: 0; /* Reseta todas as bordas */
+  border-bottom: 2px solid #000000; /* Adiciona borda apenas embaixo */
+  transition: border-bottom 0.3s ease; /* Transição suave para a borda inferior */
+  margin-right: 50px;
+  margin-top: -10px;
 
   &:hover {
-    background-color: #0056b3;
+    border-bottom: 2px solid #007bff; /* Muda a cor da borda ao passar o mouse */
   }
 `;
 
-// Styled Component para o contêiner de informações do usuário
+const Logo = styled.img`
+  height: 20%;
+  width: 30%;
+  object-fit: contain;
+  cursor: pointer;
+  background-color: #000000;
+  margin-top: 1cm;
+  margin-right: -45px;
+  margin-left: -1cm;
+`;
+
+const NavContainer = styled.nav`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const NavLinkStyled = styled(NavLink)`
+  color: #000000;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+
+  &.active {
+    color: #007bff;
+  }
+
+  &:hover {
+    color: #007bff;
+  }
+`;
+
+const MenuButton = styled.button`
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-left: 10px;
+
+  &:hover {
+    color: #ffffff;
+  }
+`;
+
 const UsuarioInfo = styled.div`
   display: flex;
   align-items: center;
+  position: relative;
 `;
 
-// Styled Component para o avatar do usuário
 const Avatar = styled.img`
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 2px solid #fff; // Adiciona uma borda branca ao redor do avatar
-  margin-right: 10px; // Espaçamento entre o avatar e o nome do usuário
+  border: 2px solid #fff;
+  margin-right: 10px;
 `;
 
-// Styled Component para o nome do usuário
 const Nome = styled.span`
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
   color: #fff;
-  margin-left: 15px; // Espaçamento entre o nome e o botão "Sobre Nós"
+  margin-left: 15px;
   display: flex;
-  align-items: center; // Alinha verticalmente o texto
-  padding: 0 10px; // Adiciona um pouco de padding para espaçamento interno
-  background-color: #333; // Fundo do nome, para destacar o texto
-  border-radius: 5px; // Adiciona bordas arredondadas
+  align-items: center;
+  padding: 0 10px;
+  background-color: #333;
+  border-radius: 5px;
+`;
+
+interface MenuDropdownProps {
+  open: boolean;
+}
+
+const MenuDropdown = styled.div<MenuDropdownProps>`
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  color: #cfcfcf;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 5px;
+  display: ${(props) => (props.open ? 'block' : 'none')};
+`;
+
+const DropdownItem = styled(Link)`
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #ddd;
+  }
 `;
 
 interface CabecalhoProps {
   usuario?: {
     nome: string;
-    avatarUrl?: string; // Adiciona a URL do avatar ao tipo do usuário
+    avatarUrl?: string;
   } | null;
 }
 
 const Cabecalho: React.FC<CabecalhoProps> = ({ usuario }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+      setMenuOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   return (
-    <CabecalhoLink to="/lOGINoFICINAS"> {/* Substitua "/pagina-desejada" pelo caminho da página para onde deseja redirecionar */}
-      <CabecalhoContainer>
-        <Logo src={logo} alt="Logo do Aplicativo" />
-        <div style={{ display: 'flex', alignItems: 'center' }}>
-          <SobreNosButton to="/sobrenos">Sobre Nós</SobreNosButton>
-          {usuario && (
-            <UsuarioInfo>
-              {usuario.avatarUrl && <Avatar src={usuario.avatarUrl} alt="Avatar do Usuário" />}
-              <Nome>{usuario.nome}</Nome>
-            </UsuarioInfo>
-          )}
-        </div>
-      </CabecalhoContainer>
-    </CabecalhoLink>
+    <CabecalhoContainer>
+      <Link to="/">
+        <Logo src={logo} alt="Logo do AutoCarePlus" />
+      </Link>
+      <NavContainer>
+        <NavLinkStyled to="/">
+          <FiHome /> Início
+        </NavLinkStyled>
+        <NavLinkStyled to="/sobrenos">
+          <FiInfo /> Cadastro de Clientes AutoCarePlus
+        </NavLinkStyled>
+        <NavLinkStyled to="/loginOficinas">
+          <FiTool /> Oficinas Credenciadas
+        </NavLinkStyled>
+        <NavLinkStyled to="/conheca">
+          <FaCar /> Conheça o AutoCarePlus
+        </NavLinkStyled>
+        <NavLinkStyled to="/SejaCadastrado">
+          <FiUser /> Clientes AutoCarePlus
+        </NavLinkStyled>
+        <NavLinkStyled to="/sobrenos">
+          <FiInfo /> Sobre Nós
+        </NavLinkStyled>
+      </NavContainer>
+
+      {usuario && (
+        <UsuarioInfo>
+          {usuario.avatarUrl && <Avatar src={usuario.avatarUrl} alt="Avatar do Usuário" />}
+          <Nome>{usuario.nome}</Nome>
+          <MenuButton onClick={toggleMenu}>
+            <FiMenu />
+          </MenuButton>
+          <MenuDropdown ref={menuRef} open={menuOpen}>
+            <DropdownItem to="/login">Login</DropdownItem>
+            <DropdownItem to="/oficinas">Oficinas</DropdownItem>
+            <DropdownItem to="/informacoes-oficinas">Informações de Oficinas</DropdownItem>
+            <DropdownItem to="/servico">Serviço do AutoCarePlus</DropdownItem>
+          </MenuDropdown>
+        </UsuarioInfo>
+      )}
+    </CabecalhoContainer>
   );
 };
 

@@ -7,18 +7,20 @@ const RodapeContainer = styled.footer`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 58px;
-  background-color: #000;
-  color: #fff;
+  height: 50px;
+  background-color: #ffffff;
+  color: #000000;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  font-size: 26px;
+  font-size: 13px;
   box-sizing: border-box;
   z-index: 1000;
   margin: 0 auto;
+  border-top: 1px solid #000000;
+ 
 `;
 
 function Rodape() {

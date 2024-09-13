@@ -12,6 +12,7 @@ import Chatbot from './Componentes/InteracaoIA/index.tsx';
 import Agenda from './routes/Agendamentooficinas/index.tsx'; 
 import OF from './routes/OficinasLogin'; 
 import OFL from './routes/OficinasLogada/index.tsx'; 
+import SEJACADASTRADO from './routes/LoginClientes'; 
 
 
 
@@ -33,6 +34,7 @@ root.render(
         <Route path="/Orcamentos" element={<Agenda />} /> {/* Caminho ajustado para a Agenda */}
         <Route path="/lOGINoFICINAS" element={<OF />} /> {/* Caminho ajustado para a Agenda */}
         <Route path="/Pagina_da_credenciada" element={<OFL />} /> {/* Caminho ajustado para a Agenda */}
+        <Route path="/SejaCadastrado" element={<SEJACADASTRADO />} /> {/* Caminho ajustado para a Agenda */}
       </Routes>
     </Router>
   </StrictMode>
