@@ -32,7 +32,7 @@ const CabecalhoContainer = styled.header`
 `;
 
 const Logo = styled.img`
-  height: 20%;
+  height: auto;
   width: 30%;
   object-fit: contain;
   cursor: pointer;

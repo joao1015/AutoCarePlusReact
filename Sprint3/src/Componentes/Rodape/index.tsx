@@ -1,9 +1,8 @@
-import React from 'react';
 import styled from 'styled-components';
 
 // Styled Component para o rodapé
 const RodapeContainer = styled.footer`
-  position: fixed;
+ 
   bottom: 0;
   left: 0;
   width: 100%;

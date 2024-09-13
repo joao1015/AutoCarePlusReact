@@ -1,10 +1,13 @@
-
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import image1 from './imagens/Banner AutoCarePlus.png';
+import image2 from './imagens/Manutenção Corretiva.png';
+import image3 from './imagens/Manutenção Preventiva.png';
+import image4 from './imagens/Melhores Peças.png';
+import image5 from './imagens/Troca de Óleo.png';
 
-// Estilização dos componentes
 const Container = styled.div`
   font-family: 'Poppins', sans-serif;
-  padding: 0 2rem;
 `;
 
 const HeroSection = styled.section`
@@ -13,104 +16,137 @@ const HeroSection = styled.section`
   align-items: center;
   padding: 4rem 0;
   text-align: center;
-  background: url('/path/to/hero-image.jpg') no-repeat center center/cover;
-  color: #406a34;
-  position: relative;
-  overflow: hidden;
   background-color: #ffffff;
   width: 100%;
+`;
 
+const CarouselSection = styled.section`
+  display: flex;
+  justify-content: space-between;
+  background-color: blue;
+  align-items: center;
+   /* Altere para garantir espaçamento */
+  height: 100%; /* Ajuste para preencher o container */
+  width: 100%; /* Ajuste para ocupar toda a largura */
+`;
+
+const TextContainer = styled.div`
+  flex: 1;
+  width: 10cm;
+  height: 10cm;
+  padding-left: 1cm;
+  color: #FFFF;
   h2 {
-    font-size: 2.5rem;
+    font-size: 1.75cm;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
   p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    font-size: 0.75cm;
+    color: #FFFF;
   }
-
-  
 `;
 
-const FeaturesSection = styled.section`
-  padding: 3rem 0;
-  background-color: #f9f9f9;
-
-  h3 {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
-  }
-
-  .features {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-  }
-
-  .feature {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 1.5rem;
-    width: 80%;
-    max-width: 300px;
-    text-align: center;
+const ImageContainer = styled.div`
+  flex: 1;
+  margin-left: 1rem; /* Adiciona espaçamento entre a imagem e o container */
+  img {
+    width: 20cm;
+    height: 15cm;
+  
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+  }
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10cm; 
+
+  button {
+    background-color: #406a34;
+    margin-top: auto;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 
     &:hover {
-      transform: translateY(-5px);
-    }
-
-    h4 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #666;
+      background-color: #333;
     }
   }
 `;
 
 // Componente Principal
 const HomePage = () => {
+  const slides = [
+    {
+      image: image1,
+      title: "Banner AutoCarePlus",
+      description: "Transforme a gestão da sua oficina com nossa plataforma completa."
+    },
+    {
+      image: image2,
+      title: "Manutenção Corretiva",
+      description: "Soluções rápidas para problemas inesperados nos veículos."
+    },
+    {
+      image: image3,
+      title: "Manutenção Preventiva",
+      description: "Prevenção é o melhor caminho. Mantenha seus veículos em dia."
+    },
+    {
+      image: image4,
+      title: "Melhores Peças",
+      description: "Trabalhamos apenas com as melhores peças do mercado."
+    },
+    {
+      image: image5,
+      title: "Troca de Óleo",
+      description: "Oferecemos serviços especializados de troca de óleo."
+    }
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % slides.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
     <Container>
       <HeroSection>
-        <h2>Revolucione sua Oficina com Metamind</h2>
-        <p>Transforme a gestão e atendimento da sua oficina com nossa solução digital moderna e acessível.</p>
-        
+      <h2>Revolucione sua Oficina com Metamind</h2>
+      <p>Transforme a gestão e atendimento da sua oficina com nossa solução digital moderna e acessível.</p>
       </HeroSection>
-      <FeaturesSection id="features">
-        <h3>Funcionalidades Principais</h3>
-        <div className="features">
-          <div className="feature">
-            <h4>Orçamento Automático</h4>
-            <p>Gerencie orçamentos de forma autônoma com nossa ferramenta de orçamento automatizado.</p>
-          </div>
-          <div className="feature">
-            <h4>Gestão Simplificada</h4>
-            <p>Integre a compra de peças, emissão de notas fiscais e gestão de garantias em um único lugar.</p>
-          </div>
-          <div className="feature">
-            <h4>Marketing Integrado</h4>
-            <p>Impulsione a visibilidade da sua oficina e atraia mais clientes com nosso serviço de marketing.</p>
-          </div>
-          <div className="feature">
-            <h4>Valorização da Mão de Obra</h4>
-            <p>Destaque a qualidade e especialização dos seus serviços para atrair mais negócios.</p>
-          </div>
-        </div>
-      </FeaturesSection>
+
+      <CarouselSection>
+        <TextContainer>
+          <h2>{slides[currentImageIndex].title}</h2>
+          <p>{slides[currentImageIndex].description}</p>
+        </TextContainer>
+        <ImageContainer>
+          <img src={slides[currentImageIndex].image} alt={slides[currentImageIndex].title} />
+        </ImageContainer>
+      </CarouselSection>
+
+      <ButtonsContainer>
+        {slides.map((slide, index) => (
+          <button key={index} onClick={() => setCurrentImageIndex(index)}>
+            {slide.title}
+          </button>
+        ))}
+      </ButtonsContainer>
     </Container>
   );
 };
 
 export default HomePage;
+
