@@ -4,7 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App.tsx';
 import './index.css';
-import Home from './Componentes/Main/index.tsx'; 
+import Home from './routes/PAGINAHOME'; 
 import Sobrenos from './routes/SobreNos/index.tsx'; 
 import Cadastrados from './routes/Entrar/index.tsx';
 import Logado from './routes/Logado/index.tsx';
@@ -12,7 +12,7 @@ import Chatbot from './Componentes/InteracaoIA/index.tsx';
 import Agenda from './routes/Agendamentooficinas/index.tsx'; 
 import OF from './routes/OficinasLogin'; 
 import OFL from './routes/OficinasLogada/index.tsx'; 
-import SEJACADASTRADO from './routes/LoginClientes'; 
+import SEJACADASTRADO from './routes/Agendamentooficinas/LoginClientes/index.tsx'; 
 
 
 
