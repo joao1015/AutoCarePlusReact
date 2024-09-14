@@ -12,7 +12,7 @@ import Chatbot from './Componentes/InteracaoIA/index.tsx';
 import Agenda from './routes/Agendamentooficinas/index.tsx'; 
 import OF from './routes/OficinasLogin'; 
 import OFL from './routes/OficinasLogada/index.tsx'; 
-import SEJACADASTRADO from './routes/Agendamentooficinas/LoginClientes/index.tsx'; 
+import SEJACADASTRADO from './routes/LoginClientes'; 
 
 
 
