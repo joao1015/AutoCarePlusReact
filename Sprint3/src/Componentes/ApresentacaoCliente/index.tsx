@@ -8,6 +8,10 @@ import image5 from './imagens/Troca de Óleo.png';
 import testimonial1 from './imagens/Depoimento 1.png';
 import testimonial2 from './imagens/Depoimento 2.png';
 import testimonial3 from './imagens/Depoimento 3.png';
+import tip1 from './imagens/DICA 1.png'; // Imagem para Dica 1
+import tip2 from './imagens/DICA 2.png'; // Imagem para Dica 2
+import tip3 from './imagens/DICA 3.png'; // Imagem para Dica 3
+import tip4 from './imagens/DICA 4.png'; // Imagem para Dica 4
 
 const Container = styled.div`
   font-family: 'Poppins', sans-serif;
@@ -112,6 +116,23 @@ const InfoSection = styled.section`
   }
 `;
 
+const HighlightedButton = styled.a`
+  display: block;
+  background-color: #ff4500; /* Laranja chamativo */
+  color: #ffffff;
+  padding: 1rem 2rem;
+  margin: 2rem auto;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #e63946; /* Cor mais escura no hover */
+  }
+`;
+
 const TestimonialsSection = styled.section`
   padding: 4rem 0;
   background-color: #f9f9f9;
@@ -146,6 +167,42 @@ const TestimonialText = styled.p`
   max-width: 100%;
   margin: 0;
   text-align: center;
+`;
+
+const TipsSection = styled.section`
+  padding: 4rem 2rem;
+  background-color: #e0e0e0;
+  text-align: center;
+`;
+
+const TipsContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+`;
+
+const Tip = styled.div`
+  width: 22%;
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    font-size: 1rem;
+    color: #333;
+  }
 `;
 
 const HomePage = () => {
@@ -216,7 +273,34 @@ const HomePage = () => {
         <h3>Como Funciona Nossa Solução de IA</h3>
         <p>Nosso sistema utiliza Inteligência Artificial para fornecer diagnósticos rápidos e precisos para seu veículo. Basta inserir as informações do seu carro, e nossa IA irá analisar e oferecer um diagnóstico, estimar o custo do reparo e localizar as oficinas mais próximas para você. Experimente a tecnologia que transforma a manutenção do seu veículo!</p>
         <a href="/saiba-mais">Saiba Mais sobre Nossa Tecnologia</a>
+        <HighlightedButton href="/acessar-solucoes">Clique Aqui para Acessar Nossa Inovação</HighlightedButton>
       </InfoSection>
+
+      <TipsSection>
+        <h2>Por Que Utilizar Nossos Serviços?</h2>
+        <TipsContainer>
+          <Tip>
+            <img src={tip1} alt="Dica 1" />
+            <h4>Diagnóstico Preciso</h4>
+            <p>Utilizamos IA avançada para oferecer diagnósticos rápidos e precisos, ajudando você a resolver problemas com eficiência.</p>
+          </Tip>
+          <Tip>
+            <img src={tip2} alt="Dica 2" />
+            <h4>Reduza o Tempo de Espera</h4>
+            <p>Encontre as oficinas mais próximas e agende seu serviço sem complicações, economizando tempo e evitando transtornos.</p>
+          </Tip>
+          <Tip>
+            <img src={tip3} alt="Dica 3" />
+            <h4>Peças de Qualidade</h4>
+            <p>Trabalhamos com as melhores peças do mercado, garantindo a durabilidade e a performance do seu veículo.</p>
+          </Tip>
+          <Tip>
+            <img src={tip4} alt="Dica 4" />
+            <h4>Atendimento Personalizado</h4>
+            <p>Oferecemos um atendimento personalizado para atender às suas necessidades específicas, com soluções feitas sob medida.</p>
+          </Tip>
+        </TipsContainer>
+      </TipsSection>
 
       <TestimonialsSection>
         <h2>O que nossos clientes dizem</h2>
