@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import React from "react";
+=======
+>>>>>>> main
 import Cabecalho from "../../Componentes/Cabecalho";
 import Formulario from "../../Componentes/FormularioCadastrocliente";
 import Rodape from "../../Componentes/FormularioCadastrocliente";

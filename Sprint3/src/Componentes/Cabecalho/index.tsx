@@ -176,7 +176,7 @@ const Cabecalho: React.FC<CabecalhoProps> = ({ usuario }) => {
         <NavLinkStyled to="/">
           <FiHome /> Início
         </NavLinkStyled>
-        <NavLinkStyled to="/sobrenos">
+        <NavLinkStyled to="/SejaCadastrado">
           <FiInfo /> Cadastro de Clientes AutoCarePlus
         </NavLinkStyled>
         <NavLinkStyled to="/loginOficinas">
