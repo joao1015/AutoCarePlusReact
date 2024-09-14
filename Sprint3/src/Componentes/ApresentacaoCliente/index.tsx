@@ -5,6 +5,9 @@ import image2 from './imagens/Manutenção Corretiva.png';
 import image3 from './imagens/Manutenção Preventiva.png';
 import image4 from './imagens/Melhores Peças.png';
 import image5 from './imagens/Troca de Óleo.png';
+import testimonial1 from './imagens/Depoimento 1.png';
+import testimonial2 from './imagens/Depoimento 2.png';
+import testimonial3 from './imagens/Depoimento 3.png';
 
 const Container = styled.div`
   font-family: 'Poppins', sans-serif;
@@ -16,8 +19,15 @@ const HeroSection = styled.section`
   align-items: center;
   padding: 4rem 0;
   text-align: center;
-  background-color: #ffffff;
+  background-color: #ececec;
   width: 100%;
+  h2 {
+    font-size: 1cm;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 0.5cm;
+  }
 `;
 
 const CarouselSection = styled.section`
@@ -25,7 +35,6 @@ const CarouselSection = styled.section`
   justify-content: space-between;
   background-color: blue;
   align-items: center;
-   /* Altere para garantir espaçamento */
   height: 100%; /* Ajuste para preencher o container */
   width: 100%; /* Ajuste para ocupar toda a largura */
 `;
@@ -40,7 +49,6 @@ const TextContainer = styled.div`
     font-size: 1.75cm;
     margin-bottom: 1rem;
   }
-
   p {
     font-size: 0.75cm;
     color: #FFFF;
@@ -49,11 +57,10 @@ const TextContainer = styled.div`
 
 const ImageContainer = styled.div`
   flex: 1;
-  margin-left: 1rem; /* Adiciona espaçamento entre a imagem e o container */
+  margin-left: 1cm; /* Adiciona espaçamento entre a imagem e o container */
   img {
     width: 20cm;
     height: 15cm;
-  
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 `;
@@ -61,26 +68,86 @@ const ImageContainer = styled.div`
 const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 10cm; 
-
+  margin: 2rem 0; /* Ajuste a margem superior e inferior conforme necessário */
   button {
-    background-color: #406a34;
-    margin-top: auto;
-    color: #fff;
+    background-color: #808080;
     border: none;
-    padding: 0.5rem 1rem;
-    margin: 0 0.5rem;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px; /* Espaçamento horizontal entre os botões */
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 50%; /* Torna os botões redondos */
     transition: background-color 0.3s ease;
-
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
     &:hover {
-      background-color: #333;
+      background-color: blue;
     }
   }
 `;
 
-// Componente Principal
+const InfoSection = styled.section`
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  a {
+    color: #003366;
+    text-decoration: none;
+    font-weight: bold;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const TestimonialsSection = styled.section`
+  padding: 4rem 0;
+  background-color: #f9f9f9;
+  text-align: center;
+`;
+
+const TestimonialsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem; /* Espaçamento entre os depoimentos */
+`;
+
+const Testimonial = styled.div`
+  width: 250px; /* Tamanho fixo para os depoimentos */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const TestimonialImage = styled.img`
+  width: 100%;
+  height: 100%;
+  border-radius: 10px; /* Ajuste a borda conforme preferir */
+  object-fit: cover; /* Mantém a proporção da imagem sem distorção */
+  margin-bottom: 1rem;
+`;
+
+const TestimonialText = styled.p`
+  font-size: 1rem;
+  color: #333;
+  max-width: 100%;
+  margin: 0;
+  text-align: center;
+`;
+
 const HomePage = () => {
   const slides = [
     {
@@ -123,8 +190,8 @@ const HomePage = () => {
   return (
     <Container>
       <HeroSection>
-      <h2>Revolucione sua Oficina com Metamind</h2>
-      <p>Transforme a gestão e atendimento da sua oficina com nossa solução digital moderna e acessível.</p>
+        <h2>Bem Vindo a AutoCarePlus</h2>
+        <p>Utilize Inteligência Artificial para diagnosticar falhas no seu veículo em tempo real, obter o valor do reparo e encontrar as oficinas mais próximas para realizar o serviço.</p>
       </HeroSection>
 
       <CarouselSection>
@@ -140,13 +207,36 @@ const HomePage = () => {
       <ButtonsContainer>
         {slides.map((slide, index) => (
           <button key={index} onClick={() => setCurrentImageIndex(index)}>
-            {slide.title}
+            {index + 1}
           </button>
         ))}
       </ButtonsContainer>
+
+      <InfoSection>
+        <h3>Como Funciona Nossa Solução de IA</h3>
+        <p>Nosso sistema utiliza Inteligência Artificial para fornecer diagnósticos rápidos e precisos para seu veículo. Basta inserir as informações do seu carro, e nossa IA irá analisar e oferecer um diagnóstico, estimar o custo do reparo e localizar as oficinas mais próximas para você. Experimente a tecnologia que transforma a manutenção do seu veículo!</p>
+        <a href="/saiba-mais">Saiba Mais sobre Nossa Tecnologia</a>
+      </InfoSection>
+
+      <TestimonialsSection>
+        <h2>O que nossos clientes dizem</h2>
+        <TestimonialsContainer>
+          <Testimonial>
+            <TestimonialImage src={testimonial1} alt="Cliente 1" />
+            <TestimonialText>“A AutoCarePlus transformou a forma como mantenho meu carro. O diagnóstico rápido e preciso ajudou a economizar tempo e dinheiro!” – João S.</TestimonialText>
+          </Testimonial>
+          <Testimonial>
+            <TestimonialImage src={testimonial2} alt="Cliente 2" />
+            <TestimonialText>“A tecnologia de IA da AutoCarePlus é impressionante. Fiquei surpreso com a precisão do diagnóstico e a facilidade de encontrar uma oficina perto de mim.” – Juliana L.</TestimonialText>
+          </Testimonial>
+          <Testimonial>
+            <TestimonialImage src={testimonial3} alt="Cliente 3" />
+            <TestimonialText>“Excelente serviço! Recebi o valor do reparo em tempo real e pude agendar o serviço sem complicações. Recomendo a todos!” – Maria A.</TestimonialText>
+          </Testimonial>
+        </TestimonialsContainer>
+      </TestimonialsSection>
     </Container>
   );
 };
 
 export default HomePage;
-
