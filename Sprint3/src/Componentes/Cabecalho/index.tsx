@@ -105,7 +105,7 @@ const Cabecalho: React.FC<CabecalhoProps> = ({ usuario }) => {
         <NavLinkStyled to="/loginOficinas">
           <FiTool /> Oficinas Credenciadas
         </NavLinkStyled>
-        <NavLinkStyled to="/conheca">
+        <NavLinkStyled to="/ConhecaAuto">
           <FaCar /> Conheça o AutoCarePlus
         </NavLinkStyled>
         <NavLinkStyled to="/sobrenos">
