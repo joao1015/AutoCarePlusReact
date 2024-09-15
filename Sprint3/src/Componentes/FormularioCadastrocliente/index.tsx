@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Link, useNavigate } from 'react-router-dom';
 
 // Styled Components
 const FormularioContainer = styled.div`
@@ -169,7 +169,7 @@ function Formulario() {
     const novoUsuario: Usuario = {
       nome,
       email,
-      senha,
+      senha, // Certifique-se de que a senha está sendo armazenada
       logradouro,
       numero,
       cidade,
@@ -310,12 +310,21 @@ function Formulario() {
         )}
         {step === 6 && (
           <FormGroup>
-            <Button type="button" onClick={handleSubmit}>Confirmar Cadastro</Button>
+            <Label htmlFor="senha">Senha</Label>
+            <Input
+              type="password"
+              id="senha"
+              name="senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+            <ButtonContainer>
+              <Button type="button" onClick={handleBack}>Voltar</Button>
+              <Button type="button" onClick={handleNext}>Concluir Cadastro</Button>
+            </ButtonContainer>
           </FormGroup>
         )}
-        <LinkStyled>
-          Já tem uma conta? <Link to="/entrar">Faça login</Link>
-        </LinkStyled>
       </FormularioStyled>
     </FormularioContainer>
   );

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom'; // Importa o Link para navegação
+import { useNavigate, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Rodape from '../Rodape';
 
-// Styled Component para o contêiner principal da página de login
+// Styled Components
 const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -22,7 +22,6 @@ const LoginContainer = styled.div`
   margin-top: 50px;
 `;
 
-// Styled Component para o formulário de login
 const LoginForm = styled.form`
   background-color: #fff;
   padding: 20px;
@@ -30,7 +29,6 @@ const LoginForm = styled.form`
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
-// Styled Component para o título do formulário
 const Title = styled.h2`
   margin-bottom: 20px;
   font-size: 26px;
@@ -39,12 +37,10 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-// Styled Component para o contêiner de cada campo do formulário
 const FormGroup = styled.div`
   margin-bottom: 20px;
 `;
 
-// Styled Component para os rótulos dos campos do formulário
 const Label = styled.label`
   display: block;
   margin-bottom: 8px;
@@ -53,7 +49,6 @@ const Label = styled.label`
   font-weight: 500;
 `;
 
-// Styled Component para os inputs do formulário
 const Input = styled.input`
   width: 100%;
   height: 65px;
@@ -71,7 +66,6 @@ const Input = styled.input`
   }
 `;
 
-// Styled Component para o botão de login
 const LoginButton = styled.button`
   width: 100%;
   height: 40px;
@@ -86,13 +80,13 @@ const LoginButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 20px;
 
   &:hover {
     background-color: #0056b3;
   }
 `;
 
-// Styled Component para o link de navegação
 const LinkStyled = styled.p`
   color: #000000;
   font-size: 18px;
@@ -100,6 +94,7 @@ const LinkStyled = styled.p`
   text-align: center;
 `;
 
+// Componente de Login
 function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -107,11 +102,17 @@ function Login() {
 
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Recupera os usuários armazenados no localStorage
     const usuariosData = localStorage.getItem('usuarios');
     const usuarios = usuariosData ? JSON.parse(usuariosData) : [];
 
+    // Verifica se o e-mail e a senha fornecidos correspondem a algum usuário
     const usuario = usuarios.find(
-      (u: { email: string; senha: string }) => u.email === email && u.senha === senha
+      (u: { email: string; senha: string }) => {
+        console.log('Checking user:', u);
+        return u.email === email && u.senha === senha;
+      }
     );
 
     if (usuario) {
@@ -119,6 +120,7 @@ function Login() {
       navigate("/Logado");
     } else {
       alert('Email ou senha incorretos.');
+      console.log('Login failed for:', { email, senha });
     }
   };
 
