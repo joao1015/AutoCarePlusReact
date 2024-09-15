@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Cabecalho from '../Cabecalho';
+import Rodape from '../Rodape';
 
 const Container = styled.div`
   width: 100%;
@@ -65,7 +67,11 @@ const OrcamentosRecebidos: React.FC = () => {
   };
 
   return (
+      
+
+
     <Container>
+      <header><Cabecalho></Cabecalho></header>
       {orcamentos.length === 0 ? (
         <p>Não há orçamentos disponíveis.</p>
       ) : (
@@ -81,6 +87,8 @@ const OrcamentosRecebidos: React.FC = () => {
           </OrcamentoCard>
         ))
       )}
+
+<header><Rodape></Rodape></header>
     </Container>
   );
 };
