@@ -153,7 +153,7 @@ function Login() {
           </FormGroup>
           <LoginButton type="submit">Entrar</LoginButton>
           <LinkStyled>
-            Não tem uma conta? <Link to="/register">Cadastre-se</Link>
+            Não tem uma conta? <Link to="/SejaCadastrado">Cadastre-se</Link>
           </LinkStyled>
         </LoginForm>
       </LoginContainer>
