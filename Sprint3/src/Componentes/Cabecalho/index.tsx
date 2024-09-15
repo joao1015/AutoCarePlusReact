@@ -112,7 +112,7 @@ const Cabecalho: React.FC<CabecalhoProps> = ({ usuario }) => {
           <FiInfo /> Sobre Nós
         </NavLinkStyled>
       </NavContainer>
-      <AreaDoClienteButton to="/area-do-cliente">
+      <AreaDoClienteButton to="/entrar">
         Área do Cliente
       </AreaDoClienteButton>
     </CabecalhoContainer>
