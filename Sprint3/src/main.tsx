@@ -1,4 +1,3 @@
-// src/index.tsx
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -14,11 +13,10 @@ import OF from './routes/OficinasLogin';
 import OFL from './routes/OficinasLogada/index.tsx'; 
 import SEJACADASTRADO from './routes/LoginClientes'; 
 
+import OrcamentosRecebidos from './Componentes/Ordens recebidas/index.tsx';
+import GestaoOrcamentos from './Componentes/GestaoOrcamentos/index.tsx';
+import OrdensFinalizadas from './Componentes/Ordens finalizadas';
 
-
-
-
-// Cria a raiz do React
 const root = createRoot(document.getElementById('root')!);
 
 root.render(
@@ -33,8 +31,12 @@ root.render(
         <Route path="/chatbot" element={<Chatbot />} /> {/* Caminho ajustado para o chatbot */}
         <Route path="/Orcamentos" element={<Agenda />} /> {/* Caminho ajustado para a Agenda */}
         <Route path="/lOGINoFICINAS" element={<OF />} /> {/* Caminho ajustado para a Agenda */}
-        <Route path="/Pagina_da_credenciada" element={<OFL />} /> {/* Caminho ajustado para a Agenda */}
+        <Route path="Pagina_da_credenciada" element={<OFL />} /> {/* Caminho ajustado para a Agenda */}
         <Route path="/SejaCadastrado" element={<SEJACADASTRADO />} /> {/* Caminho ajustado para a Agenda */}
+
+        <Route path="/orcamentosrecebidos" element={<OrcamentosRecebidos />} />
+          <Route path="/gestao-orcamentos" element={<GestaoOrcamentos />} />
+          <Route path="/ordens-finalizadas" element={<OrdensFinalizadas />} />
       </Routes>
     </Router>
   </StrictMode>

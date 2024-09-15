@@ -62,7 +62,7 @@ const Sidebar: React.FC<{ usuario: Usuario | null }> = ({ usuario }) => {
       <MensagemBoasVindas>
         {usuario ? `Bem-vindo, ${usuario.nome}` : 'Bem-vindo!'}
       </MensagemBoasVindas>
-      {/* Botão de deslogar */}
+     
       <BotaoDeslogar onClick={handleLogout}>Deslogar</BotaoDeslogar>
     </SidebarContainer>
   );

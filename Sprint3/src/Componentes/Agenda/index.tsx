@@ -1,10 +1,34 @@
 import React, { useState } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 
-const extractPecas = (text: string) => {
+const extractPecas = (text: string): string => {
   const pecasMatch = text.match(/Descrição dos Serviços:\s*(.+)/);
   return pecasMatch ? pecasMatch[1] : 'Não especificado';
+};
+
+const extractModelo = (text: string): string => {
+  const modeloMatch = text.match(/Modelo:\s*(.+)/);
+  return modeloMatch ? modeloMatch[1] : 'Não especificado';
+};
+
+const extractAno = (text: string): string => {
+  const anoMatch = text.match(/Ano:\s*(.+)/);
+  return anoMatch ? anoMatch[1] : 'Não especificado';
+};
+
+const extractPlaca = (text: string): string => {
+  const placaMatch = text.match(/Placa:\s*(.+)/);
+  return placaMatch ? placaMatch[1] : 'Não especificado';
+};
+
+const extractDados = (text: string) => {
+  return {
+    pecas: extractPecas(text),
+    modelo: extractModelo(text),
+    ano: extractAno(text),
+    placa: extractPlaca(text),
+  };
 };
 
 const AgendamentoContainer = styled.div`
@@ -68,40 +92,35 @@ const SuccessMessage = styled.p`
 
 const Agendamento: React.FC = () => {
   const location = useLocation();
-  const navigate = useNavigate();
   const lastMessage = location.state?.lastMessage || 'Nenhum orçamento disponível.';
-  const [selectedOfficina, setSelectedOfficina] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  const pecas = extractPecas(lastMessage);
+  const { pecas, modelo, ano, placa } = extractDados(lastMessage);
   const data = new Date().toLocaleDateString();
 
   const oficinas = [
     {
       id: 1,
       title: 'Oficina A',
-      description: `Peças a serem trocadas: ${pecas}`,
-      loginPath: '/login/oficinaA'
+      localStorageKey: 'oficinaA'
     },
     {
       id: 2,
       title: 'Oficina B',
-      description: `Peças a serem trocadas: ${pecas}`,
-      loginPath: '/login/oficinaB'
+      localStorageKey: 'oficinaB'
     },
     {
       id: 3,
       title: 'Oficina C',
-      description: `Peças a serem trocadas: ${pecas}`,
-      loginPath: '/login/oficinaC'
+      localStorageKey: 'oficinaC'
     },
   ];
 
-  const handleSelectOfficina = (loginPath: string) => {
-    setSelectedOfficina(loginPath);
-    localStorage.setItem('orcamento', JSON.stringify({ pecas, data }));
-    
-    // Mostrar mensagem de sucesso sem redirecionar
+  const handleSelectOfficina = (localStorageKey: string) => {
+    const orcamento = { pecas, modelo, ano, placa, data };
+    const storedOrcamentos = JSON.parse(localStorage.getItem('orcamentos') || '[]');
+    storedOrcamentos.push({ oficinaKey: localStorageKey, orcamento });
+    localStorage.setItem('orcamentos', JSON.stringify(storedOrcamentos));
     setSuccess(true);
   };
 
@@ -112,9 +131,14 @@ const Agendamento: React.FC = () => {
 
       <BalloonsWrapper>
         {oficinas.map((oficina) => (
-          <Balloon key={oficina.id} onClick={() => handleSelectOfficina(oficina.loginPath)}>
+          <Balloon key={oficina.id} onClick={() => handleSelectOfficina(oficina.localStorageKey)}>
             <BalloonTitle>{oficina.title}</BalloonTitle>
-            <BalloonDescription>{oficina.description}</BalloonDescription>
+            <BalloonDescription>
+              Modelo: {modelo}<br/>
+              Ano: {ano}<br/>
+              Placa: {placa}<br/>
+              Peças a serem trocadas: {pecas}
+            </BalloonDescription>
           </Balloon>
         ))}
       </BalloonsWrapper>

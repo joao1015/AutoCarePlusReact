@@ -1,46 +1,35 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
+import Side from '../sideoficinas/index'; // Ajuste o caminho conforme necessário
 
-const CredenciadaContainer = styled.div`
+const LayoutContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  border-radius: 12px;
-  margin: 2rem auto;
-  height: 100%;
-  width: 80%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-margin-top: 4cm;
 `;
 
-const Title = styled.h1`
-  font-size: 24px;
-  margin-bottom: 20px;
-`;
-
-const OrcamentoWrapper = styled.div`
-  background-color: #f9f9f9;
+const MainContent = styled.div`
+  flex: 1;
   padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  width: 100%;
-  max-width: 500px;
-  margin-top: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-const OrcamentoTitle = styled.h2`
-  font-size: 20px;
-  margin-bottom: 10px;
+const Title = styled.h2`
+  margin-bottom: 20px;
+  font-size: 26px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-align: center;
 `;
 
 const OrcamentoDetail = styled.p`
-  font-size: 16px;
-  margin-bottom: 5px;
-  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-family: 'Poppins', sans-serif;
 `;
 
 const PaginaDaCredenciada: React.FC = () => {
@@ -48,24 +37,20 @@ const PaginaDaCredenciada: React.FC = () => {
   const orcamento = location.state?.orcamento;
 
   // Caso não haja orçamento, exibir mensagem informativa
-  if (!orcamento) {
-    return (
-      <CredenciadaContainer>
-        <Title>Orçamentos</Title>
-        <p>Nenhum orçamento disponível no momento.</p>
-      </CredenciadaContainer>
-    );
-  }
+
 
   return (
-    <CredenciadaContainer>
-      <Title>Orçamento Recebido</Title>
-      <OrcamentoWrapper>
-        <OrcamentoTitle>Detalhes do Orçamento</OrcamentoTitle>
+    <LayoutContainer>
+      <Side></Side>
+      <MainContent>
+        <Title>Orçamento Recebido</Title>
         <OrcamentoDetail>Peças a serem trocadas: {orcamento.pecas}</OrcamentoDetail>
+        <OrcamentoDetail>Modelo do veículo: {orcamento.modelo}</OrcamentoDetail>
+        <OrcamentoDetail>Ano do veículo: {orcamento.ano}</OrcamentoDetail>
+        <OrcamentoDetail>Placa do veículo: {orcamento.placa}</OrcamentoDetail>
         <OrcamentoDetail>Data do Orçamento: {orcamento.data}</OrcamentoDetail>
-      </OrcamentoWrapper>
-    </CredenciadaContainer>
+      </MainContent>
+    </LayoutContainer>
   );
 };
 
