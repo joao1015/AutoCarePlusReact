@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Cabecalho from '../Cabecalho';
+import Rodape from '../Rodape';
 
 interface Orcamento {
   descricao: string;
@@ -140,7 +142,11 @@ const GestaoOrcamentos: React.FC = () => {
   }
 
   return (
+
+
     <Container>
+
+        <Cabecalho></Cabecalho>
       {orcamentosAceitos.map((orcamento, index) => (
         <OrcamentoCard key={index}>
           <div><strong>Descrição:</strong> {orcamento.descricao}</div>
@@ -177,6 +183,8 @@ const GestaoOrcamentos: React.FC = () => {
           </ModalContent>
         </Modal>
       )}
+
+      <Rodape></Rodape>
     </Container>
   );
 };

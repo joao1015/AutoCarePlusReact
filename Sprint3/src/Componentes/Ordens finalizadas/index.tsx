@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import Rodape from '../Rodape';
+import Cabecalho from '../Cabecalho';
 
 const Container = styled.div`
   width: 100%;
@@ -42,8 +44,26 @@ const OrdensFinalizadas: React.FC = () => {
     setOrdens(storedOrdens);
   }, []);
 
+  // Função para verificar se a ordem está dentro do prazo de garantia de 6 meses
+  const verificarGarantia = (dataFinalizacao: string): string => {
+    const dataAtual = new Date();
+    const dataFinal = new Date(dataFinalizacao);
+
+    // Adicionando 6 meses à data de finalização
+    const dataExpiracaoGarantia = new Date(dataFinal);
+    dataExpiracaoGarantia.setMonth(dataFinal.getMonth() + 6);
+
+    // Comparando com a data atual
+    if (dataAtual <= dataExpiracaoGarantia) {
+      return 'Em garantia';
+    } else {
+      return 'Fora da garantia';
+    }
+  };
+
   return (
     <Container>
+      <Cabecalho />
       <Title>Ordens Finalizadas</Title>
       <Table>
         <thead>
@@ -57,6 +77,7 @@ const OrdensFinalizadas: React.FC = () => {
             <TableHeader>Falha</TableHeader>
             <TableHeader>Defeito</TableHeader>
             <TableHeader>Medidas</TableHeader>
+            <TableHeader>Garantia</TableHeader> {/* Nova coluna para a garantia */}
           </tr>
         </thead>
         <tbody>
@@ -71,10 +92,16 @@ const OrdensFinalizadas: React.FC = () => {
               <TableCell>{ordem.falha || 'Não especificado'}</TableCell>
               <TableCell>{ordem.defeito || 'Não especificado'}</TableCell>
               <TableCell>{ordem.medidas || 'Não especificado'}</TableCell>
+              <TableCell>
+                {ordem.data ? verificarGarantia(ordem.data) : 'Data inválida'}
+              </TableCell> {/* Exibe se está ou não em garantia */}
             </TableRow>
           ))}
         </tbody>
       </Table>
+      <footer>
+        <Rodape />
+      </footer>
     </Container>
   );
 };

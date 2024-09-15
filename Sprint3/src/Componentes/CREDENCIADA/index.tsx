@@ -2,6 +2,8 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import styled from 'styled-components';
 import Side from '../sideoficinas/index'; // Ajuste o caminho conforme necessário
+import Rodape from '../Rodape';
+import Cabecalho from '../Cabecalho';
 
 const LayoutContainer = styled.div`
   display: flex;
@@ -40,7 +42,12 @@ const PaginaDaCredenciada: React.FC = () => {
 
 
   return (
+
+
+
+  
     <LayoutContainer>
+      <Cabecalho></Cabecalho>
       <Side></Side>
       <MainContent>
         <Title>Orçamento Recebido</Title>
@@ -50,7 +57,9 @@ const PaginaDaCredenciada: React.FC = () => {
         <OrcamentoDetail>Placa do veículo: {orcamento.placa}</OrcamentoDetail>
         <OrcamentoDetail>Data do Orçamento: {orcamento.data}</OrcamentoDetail>
       </MainContent>
+      <Rodape></Rodape>
     </LayoutContainer>
+  
   );
 };
 
