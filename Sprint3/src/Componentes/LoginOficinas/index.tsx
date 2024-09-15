@@ -12,14 +12,12 @@ const Logado = styled.div`
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+  margin: 0 auto;
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
-
-
 `;
 
 const Balao = styled.form`
@@ -58,7 +56,7 @@ const Label = styled.label`
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  color: #333; /* Cor do texto para maior contraste */
+  color: #333;
   text-align: left;
   width: 100%;
 `;
@@ -109,10 +107,17 @@ const LogarButton = styled.button`
   }
 `;
 
+const ErrorMessage = styled.p`
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+`;
 
 const OficinasLogin: React.FC = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const oficinasFixas = [
@@ -130,23 +135,19 @@ const OficinasLogin: React.FC = () => {
 
     if (oficinaValida) {
       alert(`Login bem-sucedido! Bem-vindo à ${oficinaValida.nome}`);
-
-      const storedOrcamento = localStorage.getItem('orcamento');
-      if (storedOrcamento) {
-        const orcamentoData = JSON.parse(storedOrcamento);
-        navigate('/Pagina_da_credenciada', { state: { orcamento: orcamentoData } });
-      } else {
-        alert('Nenhum orçamento disponível.');
-      }
+      
+      // Redireciona para a página, independentemente da presença de um orçamento
+      navigate('/Pagina_da_credenciada');
+      
     } else {
-      alert('Email ou senha incorretos.');
+      setErrorMessage('Email ou senha incorretos. Por favor, tente novamente.');
     }
   };
 
   return (
     <Logado>
       <Balao onSubmit={handleLogin}>
-        <Title>Acessa conta - Preencha seus dados da Credenciada acesso para continuar</Title>
+        <Title>Acessa conta - Preencha seus dados da Credenciada</Title>
         <FormGroup>
           <Label htmlFor="email">Email</Label>
           <Input
@@ -170,6 +171,7 @@ const OficinasLogin: React.FC = () => {
           />
         </FormGroup>
         <LogarButton type="submit">Logar</LogarButton>
+        {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       </Balao>
     </Logado>
   );

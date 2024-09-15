@@ -1,21 +1,20 @@
 import Cabecalho from "../../Componentes/Cabecalho";
 import Rodape from "../../Componentes/Rodape";
-import Credenciada from "../../Componentes/CREDENCIADA/index"
+import Credenciada from "../../Componentes/CREDENCIADA/index";
+import Side from '../../Componentes/sideoficinas'
+
 
 
 function OficinasLogadas (){
 
 
 return(
-    <div>
-    <Cabecalho></Cabecalho>
-    
-    <Credenciada></Credenciada>
-   
-    <Rodape></Rodape>
 
-    </div>
+
+    <div><Side></Side></div>
     
+    
+   
 )
 
 }
