@@ -10,17 +10,24 @@ const Container = styled.div`
 `;
 
 const OrcamentoCard = styled.div`
-  background-color: #000000;
+  background-color: #002fff;
   padding: 20px;
   margin-bottom: 10px;
   border: 1px solid #ff0000;
   border-radius: 8px;
+  width: 100%;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: #fff;
+  justify-content: center;
+  align-items: center;
+  margin-top:20px;
+  align-items: center;
+  justify-content: center;
+
 `;
 
 const Button = styled.button`
-  background-color: #007bff;
+  background-color: #10B981;
   color: #fff;
   border: none;
   padding: 10px 20px;

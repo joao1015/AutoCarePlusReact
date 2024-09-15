@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const SidebarContainer = styled.div`
-  width: 250px;
+ width: 220px;
   background-color: #000; /* Black background */
   height: 100vh;
   padding: 20px;

@@ -4,8 +4,11 @@ import Rodape from '../Rodape';
 import Cabecalho from '../Cabecalho';
 
 const Container = styled.div`
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the container fills the viewport height */
   padding: 20px;
+  box-sizing: border-box;
 `;
 
 const Table = styled.table`
@@ -34,6 +37,10 @@ const TableRow = styled.tr`
 
 const Title = styled.h2`
   margin-bottom: 20px;
+`;
+
+const Footer = styled.footer`
+  margin-top: auto; /* Pushes the footer to the bottom of the container */
 `;
 
 const OrdensFinalizadas: React.FC = () => {
@@ -99,9 +106,9 @@ const OrdensFinalizadas: React.FC = () => {
           ))}
         </tbody>
       </Table>
-      <footer>
+      <Footer>
         <Rodape />
-      </footer>
+      </Footer>
     </Container>
   );
 };
