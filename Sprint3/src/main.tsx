@@ -13,7 +13,6 @@ import OF from './routes/OficinasLogin';
 import OFL from './routes/OficinasLogada/index.tsx'; 
 import SEJACADASTRADO from './routes/LoginClientes'; 
 import ConhecaAuto from './routes/ConhecaAuto/index.tsx'; 
-
 import OrcamentosRecebidos from './Componentes/Ordens recebidas/index.tsx';
 import GestaoOrcamentos from './Componentes/GestaoOrcamentos/index.tsx';
 import OrdensFinalizadas from './Componentes/Ordens finalizadas';
@@ -35,8 +34,9 @@ root.render(
         <Route path="Pagina_da_credenciada" element={<OFL />} /> {/* Caminho ajustado para a Agenda */}
         <Route path="/SejaCadastrado" element={<SEJACADASTRADO />} /> {/* Caminho ajustado para a Agenda */}
         <Route path="/orcamentosrecebidos" element={<OrcamentosRecebidos />} />
-          <Route path="/gestao-orcamentos" element={<GestaoOrcamentos />} />
-          <Route path="/ordens-finalizadas" element={<OrdensFinalizadas />} />
+        <Route path="/gestao-orcamentos" element={<GestaoOrcamentos />} />
+        <Route path="/ordens-finalizadas" element={<OrdensFinalizadas />} />
+        <Route path="/ConhecaAuto" element={<ConhecaAuto />} />
       </Routes>
     </Router>
   </StrictMode>

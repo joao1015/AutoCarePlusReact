@@ -272,8 +272,8 @@ const HomePage = () => {
       <InfoSection>
         <h3>Como Funciona Nossa Solução de IA</h3>
         <p>Nosso sistema utiliza Inteligência Artificial para fornecer diagnósticos rápidos e precisos para seu veículo. Basta inserir as informações do seu carro, e nossa IA irá analisar e oferecer um diagnóstico, estimar o custo do reparo e localizar as oficinas mais próximas para você. Experimente a tecnologia que transforma a manutenção do seu veículo!</p>
-        <a href="/saiba-mais">Saiba Mais sobre Nossa Tecnologia</a>
-        <HighlightedButton href="/acessar-solucoes">Clique Aqui para Acessar Nossa Inovação</HighlightedButton>
+        <a href="/ConhecaAuto">Saiba Mais sobre Nossa Tecnologia</a>
+        <HighlightedButton href="/entrar">Clique Aqui para Acessar Nossa Inovação</HighlightedButton>
       </InfoSection>
 
       <TipsSection>
