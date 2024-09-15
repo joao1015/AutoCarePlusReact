@@ -11,7 +11,13 @@ function OficinasLogadas (){
 return(
 
 
-    <div><Side></Side></div>
+    <div><Cabecalho>
+        
+        </Cabecalho><Side></Side>
+        
+        <Rodape></Rodape>
+        
+        </div>
     
     
    

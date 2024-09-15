@@ -258,18 +258,21 @@ const Agendamento: React.FC<{ usuario: any | null }> = ({ usuario }) => {
       title: 'Oficina Faria Lima',
       localStorageKey: 'oficinaA',
       image: oficinaAImage,
+      address: 'Av. Faria Lima, 1234, São Paulo, SP'
     },
     {
       id: 2,
       title: 'Oficina Barra Funda',
       localStorageKey: 'oficinaB',
       image: oficinaBImage,
+      address: 'Rua Barra Funda, 567, São Paulo, SP'
     },
     {
       id: 3,
       title: 'Oficina Vila Sonia',
       localStorageKey: 'oficinaC',
       image: oficinaCImage,
+      address: 'Av. Vila Sonia, 789, São Paulo, SP'
     },
   ];
 
@@ -292,7 +295,7 @@ const Agendamento: React.FC<{ usuario: any | null }> = ({ usuario }) => {
           <CloseButton onClick={() => setIsModalOpen(false)}>×</CloseButton>
           <ModalTitle>Último Orçamento</ModalTitle>
           <ModalMessage>{lastMessage}</ModalMessage>
-          <ModalButton onClick={() => setIsModalOpen(false)}>Fechar</ModalButton> {/* New button in modal */}
+          <ModalButton onClick={() => setIsModalOpen(false)}>Fechar</ModalButton>
         </ModalContent>
       </ModalOverlay>
 
@@ -308,6 +311,7 @@ const Agendamento: React.FC<{ usuario: any | null }> = ({ usuario }) => {
             </BalloonImageContainer>
             <BalloonTitle>{oficina.title}</BalloonTitle>
             <BalloonDescription>
+              Endereço: {oficina.address}<br/>
               Modelo: {modelo}<br/>
               Ano: {ano}<br/>
               Placa: {placa}<br/>
