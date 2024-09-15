@@ -71,12 +71,12 @@ const AreaDoClienteButton = styled(Link)`
   background-color: #ffffff;
   color: #007bff;
   border: 3px solid #007bff;
-  padding: 1px 25px; /* Alterei o padding horizontal para deixar o botão retangular */
+  padding: 1px 25px; 
   border-radius: 5px;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  margin-left: auto; /* Move o botão para a extrema direita */
+  margin-left: auto; 
   transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
