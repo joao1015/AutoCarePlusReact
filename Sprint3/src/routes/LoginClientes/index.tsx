@@ -1,24 +1,17 @@
-import React from "react";
 import Cabecalho from "../../Componentes/Cabecalho";
-import Formulario from "../../Componentes/FormularioCadastrocliente";
+import Cadastrado from "../../Componentes/FormularioCadastrocliente";
 import Rodape from "../../Componentes/Rodape";
 
 
-
-function Logincliente (){
-
-return(
-
-    <div><Cabecalho></Cabecalho>
-    <Formulario></Formulario>
-    <Rodape></Rodape>
+// Definindo os componentes estilizados
 
 
-
-    </div>
-)
-
-
+function Entrar() {
+  return (
+   
+   <div><Cabecalho></Cabecalho>
+   <Cadastrado></Cadastrado><Rodape></Rodape></div>
+  );
 }
 
-export default Logincliente
+export default Entrar;

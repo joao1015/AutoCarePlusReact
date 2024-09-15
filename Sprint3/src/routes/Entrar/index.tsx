@@ -13,7 +13,7 @@ return(
     
     <Cadastrado></Cadastrado>
     
-    <Rodape></Rodape></div>
+  </div>
 
 )
 

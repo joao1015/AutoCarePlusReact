@@ -34,6 +34,9 @@ root.render(
         <Route path="/lOGINoFICINAS" element={<OF />} /> {/* Caminho ajustado para a Agenda */}
         <Route path="Pagina_da_credenciada" element={<OFL />} /> {/* Caminho ajustado para a Agenda */}
         <Route path="/SejaCadastrado" element={<SEJACADASTRADO />} /> {/* Caminho ajustado para a Agenda */}
+        <Route path="/orcamentosrecebidos" element={<OrcamentosRecebidos />} />
+          <Route path="/gestao-orcamentos" element={<GestaoOrcamentos />} />
+          <Route path="/ordens-finalizadas" element={<OrdensFinalizadas />} />
       </Routes>
     </Router>
   </StrictMode>

@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Importa o hook para navegação
+import { useNavigate, Link } from 'react-router-dom'; // Importa o Link para navegação
 import styled from 'styled-components';
+import Rodape from '../Rodape';
 
-// Styled Component para o contêiner principal
-const Logado = styled.div`
-  position: absolute;
-  top: 163px;
-  right: 0;
-  transform: translateX(0);
-  width: 100%;
-  height: 100%;
-  justify-items: center;
-  background-color: #fff;
+// Styled Component para o contêiner principal da página de login
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F3F4F6;
 `;
 
-// Styled Component para o formulário (balão)
-const Balao = styled.form`
-  background-color: #ffffff;
+const LoginContainer = styled.div`
+  background-color: #F3F4F6;
+  width: 70%;
+  max-width: 600px;
   padding: 20px;
-  height: 100%;
-  width: 50%;
-  align-items: center;
-  margin-left: 10cm;
-  box-sizing: border-box;
+  box-shadow: 0 4px 8px rgba(176, 30, 30, 0.1);
+  border-radius: 8px;
+  margin: auto;
+  margin-top: 50px;
 `;
 
-// Styled Component para o título
+// Styled Component para o formulário de login
+const LoginForm = styled.form`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+`;
+
+// Styled Component para o título do formulário
 const Title = styled.h2`
   margin-bottom: 20px;
   font-size: 26px;
@@ -51,104 +56,107 @@ const Label = styled.label`
 // Styled Component para os inputs do formulário
 const Input = styled.input`
   width: 100%;
-  max-width: 600px;
   height: 65px;
   padding: 0 15px;
-  border: 1px solid white;
+  border: 1px solid #ddd;
   border-radius: 20px;
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
-  background-color: #b0bac3;
+  background-color: #f0f0f0;
   box-sizing: border-box;
-  margin-left: 1cm;
 
   &::placeholder {
-    color: #fff;
-    opacity: 0.8;
+    color: #999;
   }
 `;
 
 // Styled Component para o botão de login
-const LogarButton = styled.button`
-  font-family: 'Poppins', sans-serif;
-  font-weight: 400;
-  font-size: 26px;
-  width: 301.45px;
+const LoginButton = styled.button`
+  width: 100%;
   height: 40px;
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #10B981;
+  color: #fff;
   border: none;
-  border-radius: 8px;
-  padding: 10px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
   cursor: pointer;
-  text-align: center;
-  line-height: 4px;
-  transition: background-color 0.3s;
-  margin-left: 4.5cm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: #0056b3;
   }
 `;
 
+// Styled Component para o link de navegação
+const LinkStyled = styled.p`
+  color: #000000;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+`;
+
 function Login() {
-  // Estado para armazenar o email e a senha digitados pelo usuário
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const navigate = useNavigate(); // Hook para navegação
+  const navigate = useNavigate();
 
-  // Função que lida com o envio do formulário de login
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); // Evita o comportamento padrão de recarregar a página
-
-    // Recupera os dados dos usuários armazenados no localStorage com verificação de null
+    event.preventDefault();
     const usuariosData = localStorage.getItem('usuarios');
     const usuarios = usuariosData ? JSON.parse(usuariosData) : [];
 
-    // Verifica se os dados do usuário correspondem aos fornecidos no formulário
     const usuario = usuarios.find(
       (u: { email: string; senha: string }) => u.email === email && u.senha === senha
     );
 
     if (usuario) {
       alert('Login bem-sucedido!');
-      // Redireciona para a página logado após login bem-sucedido
       navigate("/Logado");
     } else {
-      alert('Email ou senha incorretos.'); // Mensagem de erro se os dados não corresponderem
+      alert('Email ou senha incorretos.');
     }
   };
 
   return (
-    <Logado>
-      <Balao onSubmit={handleLogin}>
-        <Title>Acessa conta - Preencha seus dados de acesso para continuar</Title>
-        <FormGroup>
-          <Label htmlFor="email">Email</Label>
-          <Input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="senha">Senha</Label>
-          <Input
-            type="password"
-            id="senha"
-            name="senha"
-            value={senha}
-            onChange={(e) => setSenha(e.target.value)}
-            required
-          />
-        </FormGroup>
-        <LogarButton type="submit">Entrar</LogarButton>
-      </Balao>
-    </Logado>
+    <PageContainer>
+      <LoginContainer>
+        <LoginForm onSubmit={handleLogin}>
+          <Title>Acesse sua Conta</Title>
+          <FormGroup>
+            <Label htmlFor="email">Email</Label>
+            <Input
+              type="email"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label htmlFor="senha">Senha</Label>
+            <Input
+              type="password"
+              id="senha"
+              name="senha"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+          </FormGroup>
+          <LoginButton type="submit">Entrar</LoginButton>
+          <LinkStyled>
+            Não tem uma conta? <Link to="/register">Cadastre-se</Link>
+          </LinkStyled>
+        </LoginForm>
+      </LoginContainer>
+      <Rodape />
+    </PageContainer>
   );
 }
 
