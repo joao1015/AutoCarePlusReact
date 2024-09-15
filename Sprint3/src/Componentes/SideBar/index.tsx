@@ -10,32 +10,33 @@ interface Usuario {
 
 // Styled Component para a Sidebar
 const SidebarContainer = styled.div`
-  width: 200px; /* Largura da sidebar */
-  height: 100vh; /* Altura da sidebar para preencher a tela */
+  width: 220px; /* Ajuste a largura para corresponder ao padrão */
+  height: 110vh; /* Altura da sidebar para preencher a tela */
   background-color: #000; /* Cor de fundo preta */
   color: #fff; /* Texto branco */
   display: flex;
   flex-direction: column; /* Alinha os itens verticalmente */
   padding: 20px;
   box-sizing: border-box;
-  margin-left: -1cm;
-  margin-top: 2cm;
+  margin-left: 0; /* Ajustado para não ter margens externas */
+
+  font-family: 'Poppins', sans-serif; /* Fonte Poppins */
 `;
 
 // Styled Component para o botão de deslogar
 const BotaoDeslogar = styled.button`
-  background-color: #ffffff; /* Preto */
-  color: #000000; /* Texto branco */
+  background-color: #117500; /* Cor de fundo azul (anterior) */
+  color: #fff; /* Texto branco */
   border: none; /* Remove a borda padrão */
   padding: 10px 20px; /* Espaçamento interno */
   font-size: 16px; /* Tamanho da fonte */
   cursor: pointer; /* Muda o cursor ao passar sobre o botão */
-  border-radius: 5px; /* Borda arredondada */
+  border-radius: 8px; /* Borda arredondada */
   transition: background-color 0.3s ease; /* Transição suave para a cor de fundo */
-  margin-left: 20px;
+  
 
   &:hover {
-    background-color: #333; /* Cor de fundo ao passar o mouse */
+    background-color: #0d5b00; /* Cor de fundo ao passar o mouse (escuro) */
   }
 `;
 
@@ -43,9 +44,9 @@ const BotaoDeslogar = styled.button`
 const MensagemBoasVindas = styled.div`
   margin-bottom: 20px; /* Espaçamento inferior */
   font-family: 'Poppins', sans-serif;
-  font-size: 10px;
+  font-size: 16px; /* Ajustado para maior legibilidade */
   font-weight: 600;
-  margin-left: 10px;
+  color: #fff; /* Texto branco */
 `;
 
 const Sidebar: React.FC<{ usuario: Usuario | null }> = ({ usuario }) => {

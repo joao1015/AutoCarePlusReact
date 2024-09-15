@@ -14,7 +14,7 @@ interface Usuario {
 // Styled Component para o conteúdo principal
 const ConteudoPrincipal = styled.div`
   margin-left: 200px; /* Espaçamento para a sidebar */
-  padding: 20px;
+ 
 `;
 
 const PaginaLogada: React.FC = () => {

@@ -109,7 +109,7 @@ const Input = styled.input`
 // Estilos para o botão de envio
 const Button = styled.button`
   padding: 10px 20px;
-  background-color: #000000;
+  background-color: #117500;
   color: #ffffff;
   border: none;
   border-radius: 20px;
@@ -265,7 +265,7 @@ const Chatbot: React.FC = () => {
           />
           <Button onClick={handleSubmit} aria-label="Enviar mensagem">Enviar</Button>
         </ChatInputContainer>
-        <Button onClick={handleNext} aria-label="Próxima etapa" style={{ marginTop: '10px' }}>Next</Button>
+        <Button onClick={handleNext} aria-label="Próxima etapa" style={{ marginTop: '10px' }}>Seguir Com Agendamento</Button>
       </ChatContainer>
     </>
   );
