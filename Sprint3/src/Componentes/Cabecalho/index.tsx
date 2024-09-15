@@ -1,8 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import logo from './Imagems/LogoAutoCareplus.png';
 import { Link, NavLink } from 'react-router-dom';
-import { FiHome, FiInfo, FiTool } from 'react-icons/fi';
+import { FiHome, FiInfo, FiTool, FiUser } from 'react-icons/fi';
 import { FaCar } from 'react-icons/fa';
 
 // Styled Components corrigidos
@@ -102,6 +102,9 @@ const Cabecalho: React.FC<CabecalhoProps> = ({ usuario }) => {
         <NavLinkStyled to="/">
           <FiHome /> Início
         </NavLinkStyled>
+        <NavLinkStyled to="/SejaCadastrado">
+          <FiUser /> Seja Cadastrado
+        </NavLinkStyled>
         <NavLinkStyled to="/loginOficinas">
           <FiTool /> Oficinas Credenciadas
         </NavLinkStyled>
@@ -120,4 +123,3 @@ const Cabecalho: React.FC<CabecalhoProps> = ({ usuario }) => {
 };
 
 export default Cabecalho;
-
