@@ -52,7 +52,7 @@ const ChatContainer = styled.div`
 // Estilos para o cabeçalho do chatbot
 const ChatHeader = styled.div`
   width: 100%;
-  background-color: #000000;
+  background-color: #002cbb;
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
   padding: 15px;
@@ -146,7 +146,7 @@ const Message = styled.div<{ isUser: boolean }>`
   border-radius: 10px;
   border: 1px solid #000000;
   background-color: ${({ isUser }) => (isUser ? '#d4edda' : '#f8d7da')};
-  color: ${({ isUser }) => (isUser ? '#155724' : '#721c24')};
+  color: ${({ isUser }) => (isUser ? '#000000' : '#000000')};
   margin-left: ${({ isUser }) => (isUser ? '10px' : '0')};
   margin-right: ${({ isUser }) => (isUser ? '0' : '10px')};
   max-width: 70%;
