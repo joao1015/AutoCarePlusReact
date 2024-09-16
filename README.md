@@ -2,28 +2,47 @@
 
 # 🚗 **FIAP-2014 / CHALLENGE - PORTO SEGURO - SPRINT 3**
 
-## **Projeto:** AutoCarePlusReact  
-
-### **Grupo:** MetaMind!  
+## Índice
+1. [Projeto](#projeto)
+2. [Grupo](#grupo)
+3. [Turmas e Professores](#turmas-e-professores)
+4. [Repositório do Projeto](#repositorio-do-projeto)
+5. [Equipe](#equipe)
+6. [Sobre o Projeto](#sobre-o-projeto)
+7. [Problemas Identificados](#problemas-identificados)
 
 ---
 
-## 🎓 **Turmas:** 
+## <a name="projeto"></a>**Projeto:** AutoCarePlusReact  
+
+---
+
+## <a name="grupo"></a>**Grupo:** MetaMind!  
+
+---
+
+## 🎓 **Turmas e Professores:**
+
 - **TDSPV**
 - **TDSPZ**  
 
-## **Professores:**
+### Professores:
 - **TDSPV:** [Alexandre Carlos de Jesus](https://github.com/alecarlosjesus)
 - **TDSPZ:** [Caio Halbert Jacinto](https://github.com/CaioHalbert)
 
+[🔝 Voltar ao topo](#)
+
 ---
 
-## 📂 **Repositório do Projeto:**
+## <a name="repositorio-do-projeto"></a>📂 **Repositório do Projeto:**
+
 [AutoCarePlusReact - Repositório](https://github.com/joao1015/AutoCarePlusReact)
 
+[🔝 Voltar ao topo](#)
+
 ---
 
-## 👥 **Equipe:**
+## <a name="equipe"></a>👥 **Equipe:**
 
 | Nome                        | RM      | Turma   | GitHub                                          | Foto                                          |
 |-----------------------------|---------|---------|-------------------------------------------------|-----------------------------------------------|
@@ -31,9 +50,11 @@
 | **João Paulo Moreira**       | 557808  | 1TDSPV  | [GitHub João Paulo](https://github.com/joao1015?tab=repositories) | ![João Paulo](https://drive.google.com/uc?export=view&id=1wxoVt-5v4ifCAGZHkINnNNZuMXSqowpz) |
 | **Paulo André Carminati**    | 557881  | 1TDSPZ  | [GitHub Paulo André](https://github.com/carmipa) | ![Paulo André](https://drive.google.com/uc?export=view&id=19bA5l9huX-K2Kkr7uHWHl4tjGjR6ssSZ) |
 
+[🔝 Voltar ao topo](#)
+
 ---
 
-## 📑 **Sobre o Projeto:**
+## <a name="sobre-o-projeto"></a>📑 **Sobre o Projeto:**
 
 ### 💡 **IA para Diagnóstico de Falhas**  
 Desenvolvemos uma inteligência artificial capaz de identificar falhas em veículos e oferecer soluções detalhadas.
@@ -49,10 +70,16 @@ Nossa plataforma permite encontrar oficinas credenciadas, comparar preços, temp
 - **Processo Simples:** O cliente agenda o serviço, escolhe a oficina e recebe atendimento personalizado.
 - **Aprendizado Contínuo:** Oficinas preenchem ordens de serviço, e a IA aprimora o banco de dados, melhorando futuras interações.
 
----
-
-## 🚩 **Problema Identificado:**
-1. **Dificuldade no Diagnóstico de Falhas:** Muitos proprietários enfrentam dificuldades para identificar com precisão problemas em seus veículos, resultando em diagnósticos incorretos e reparos inadequados.
-2. **Escolha Desafiadora de Oficinas:** Encontrar oficinas confiáveis, com serviços de qualidade, transparência nos preços e conveniência no atendimento, pode ser um grande desafio para os consumidores.
+[🔝 Voltar ao topo](#)
 
 ---
+
+## <a name="problemas-identificados"></a>🚩 **Problemas Identificados:**
+
+1. **Dificuldade no Diagnóstico de Falhas:**
+   - Proprietários frequentemente enfrentam problemas para identificar falhas em seus veículos, resultando em diagnósticos incorretos e reparos inadequados.
+   
+2. **Escolha Desafiadora de Oficinas:**
+   - Consumidores têm dificuldade em encontrar oficinas confiáveis que ofereçam serviços de qualidade, com transparência nos preços e conveniência no atendimento.
+
+[🔝 Voltar ao topo](#)
