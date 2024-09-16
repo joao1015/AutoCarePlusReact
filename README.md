@@ -24,7 +24,7 @@
 ## 🎓 **Turmas e Professores:**
 
 - **TDSPV**
-- **TDSPZ**  
+- **TDSPZ**
 
 ### Professores:
 - **TDSPV:** [Alexandre Carlos de Jesus](https://github.com/alecarlosjesus)
