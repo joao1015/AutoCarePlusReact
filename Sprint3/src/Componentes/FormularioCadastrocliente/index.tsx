@@ -82,11 +82,12 @@ const Button = styled.button`
   }
 `;
 
-const LinkStyled = styled.p`
-  color: #000000;
+const Message = styled.p<{ error?: boolean }>`
+  color: ${({ error }) => (error ? 'red' : 'green')};
   font-size: 18px;
   font-family: 'Poppins', sans-serif;
   text-align: center;
+  margin-top: 10px;
 `;
 
 const ButtonContainer = styled.div`
@@ -116,6 +117,8 @@ function Formulario() {
   const [numero, setNumero] = useState('');
   const [estado, setEstado] = useState('');
   const [cidade, setCidade] = useState('');
+  const [message, setMessage] = useState<string | null>(null);
+  const [error, setError] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const handleCepChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -128,15 +131,19 @@ function Formulario() {
         const data = await response.json();
 
         if (data.erro) {
-          alert('CEP não encontrado.');
+          setError(true);
+          setMessage('CEP não encontrado.');
           return;
         }
 
         setLogradouro(data.logradouro || '');
         setEstado(data.uf || '');
         setCidade(data.localidade || '');
+        setError(false);
+        setMessage(null);
       } catch (error) {
-        alert('Erro ao buscar CEP.');
+        setError(true);
+        setMessage('Erro ao buscar CEP.');
       }
     }
   };
@@ -154,33 +161,28 @@ function Formulario() {
   };
 
   const handleSubmit = () => {
-    // Recupera os usuários já cadastrados do localStorage ou define um array vazio
     const usuariosCadastrados: Usuario[] = JSON.parse(localStorage.getItem('usuarios') || '[]');
-
-    // Verifica se o e-mail já está cadastrado
     const emailJaCadastrado = usuariosCadastrados.some((usuario) => usuario.email === email);
 
     if (emailJaCadastrado) {
-      alert('E-mail já está sendo usado.');
+      setError(true);
+      setMessage('E-mail já está sendo usado.');
       return;
     }
 
-    // Cria um novo usuário
     const novoUsuario: Usuario = {
       nome,
       email,
-      senha, // Certifique-se de que a senha está sendo armazenada
+      senha,
       logradouro,
       numero,
       cidade,
       estado,
     };
 
-    // Adiciona o novo usuário à lista de usuários cadastrados
     usuariosCadastrados.push(novoUsuario);
     localStorage.setItem('usuarios', JSON.stringify(usuariosCadastrados));
 
-    // Limpa os campos do formulário
     setNome('');
     setEmail('');
     setSenha('');
@@ -190,14 +192,20 @@ function Formulario() {
     setCidade('');
     setEstado('');
 
-    alert('Conta criada com sucesso!');
-    navigate("/Logado");
+    setError(false);
+    setMessage('Conta criada com sucesso!');
+    
+    setTimeout(() => {
+      navigate("/Logado");
+    }, 3000);
   };
+
 
   return (
     <FormularioContainer>
       <FormularioStyled>
         <Title>Crie sua Conta Gratuita</Title>
+        {message && <Message error={error}>{message}</Message>}
         {step === 1 && (
           <FormGroup>
             <Label htmlFor="nome">Nome Completo</Label>
@@ -321,7 +329,7 @@ function Formulario() {
             />
             <ButtonContainer>
               <Button type="button" onClick={handleBack}>Voltar</Button>
-              <Button type="button" onClick={handleNext}>Concluir Cadastro</Button>
+              <Button type="button" onClick={handleNext}>Concluir </Button>
             </ButtonContainer>
           </FormGroup>
         )}

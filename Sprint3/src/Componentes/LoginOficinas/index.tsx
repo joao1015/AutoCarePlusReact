@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-// Styled Component for the main container
+// Styled Components
 const PageContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -13,7 +13,6 @@ const PageContainer = styled.div`
   padding: 20px;
 `;
 
-// Styled Component for the form (balloon)
 const Balao = styled.form`
   background-color: #ffffff;
   padding: 20px;
@@ -28,7 +27,6 @@ const Balao = styled.form`
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 `;
 
-// Styled Component for the title
 const Title = styled.h2`
   margin-bottom: 20px;
   font-size: 26px;
@@ -37,7 +35,6 @@ const Title = styled.h2`
   text-align: center;
 `;
 
-// Styled Component for the form group
 const FormGroup = styled.div`
   margin-bottom: 20px;
   width: 100%;
@@ -46,7 +43,6 @@ const FormGroup = styled.div`
   align-items: center;
 `;
 
-// Styled Component for the labels
 const Label = styled.label`
   display: block;
   margin-bottom: 8px;
@@ -58,7 +54,6 @@ const Label = styled.label`
   width: 100%;
 `;
 
-// Styled Component for the inputs
 const Input = styled.input`
   width: calc(100% - 30px);
   height: 50px;
@@ -82,7 +77,6 @@ const Input = styled.input`
   }
 `;
 
-// Styled Component for the login button
 const LogarButton = styled.button`
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
@@ -105,7 +99,6 @@ const LogarButton = styled.button`
   }
 `;
 
-// Styled Component for error message
 const ErrorMessage = styled.p`
   color: red;
   font-size: 16px;
@@ -113,10 +106,21 @@ const ErrorMessage = styled.p`
   text-align: center;
 `;
 
+const SuccessMessage = styled.p`
+  color: green;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+`
+
+;
+
 const OficinasLogin: React.FC = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const navigate = useNavigate();
 
   const oficinasFixas = [
@@ -133,9 +137,18 @@ const OficinasLogin: React.FC = () => {
     );
 
     if (oficinaValida) {
-      alert(`Login bem-sucedido! Bem-vindo à ${oficinaValida.nome}`);
-      navigate('/Pagina_da_credenciada');
+      setErrorMessage('');
+      setSuccessMessage(`Login bem-sucedido! Bem-vindo à ${oficinaValida.nome}`);
+      setShowSuccessMessage(true);
+
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+        navigate('/Pagina_da_credenciada'); // Navegar após 3 segundos
+      }, 3000); // Tempo para exibir a mensagem de sucesso
+
     } else {
+      setSuccessMessage('');
+      setShowSuccessMessage(false);
       setErrorMessage('Email ou senha incorretos. Por favor, tente novamente.');
     }
   };
@@ -168,6 +181,7 @@ const OficinasLogin: React.FC = () => {
         </FormGroup>
         <LogarButton type="submit">Logar</LogarButton>
         {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+        {showSuccessMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
       </Balao>
     </PageContainer>
   );

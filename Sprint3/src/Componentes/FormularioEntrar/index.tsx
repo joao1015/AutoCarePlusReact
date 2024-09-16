@@ -94,10 +94,27 @@ const LinkStyled = styled.p`
   text-align: center;
 `;
 
+const ErrorMessage = styled.p`
+  color: red;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+`;
+
+const SuccessMessage = styled.p`
+  color: green;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+`;
+
 // Componente de Login
 function Login() {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  const [successMessage, setSuccessMessage] = useState('');
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = (event: React.FormEvent<HTMLFormElement>) => {
@@ -116,10 +133,18 @@ function Login() {
     );
 
     if (usuario) {
-      alert('Login bem-sucedido!');
-      navigate("/Logado");
+      setErrorMessage('');
+      setSuccessMessage(`Login bem-sucedido! Bem-vindo à AutoCarePlus`);
+      setShowSuccessMessage(true);
+
+      setTimeout(() => {
+        setShowSuccessMessage(false);
+        navigate('/Logado');
+      }, 3000); // Hide success message and navigate after 3 seconds
     } else {
-      alert('Email ou senha incorretos.');
+      setSuccessMessage('');
+      setShowSuccessMessage(false);
+      setErrorMessage('Email ou senha incorretos. Por favor, tente novamente.');
       console.log('Login failed for:', { email, senha });
     }
   };
@@ -152,6 +177,10 @@ function Login() {
             />
           </FormGroup>
           <LoginButton type="submit">Entrar</LoginButton>
+
+          {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
+          {showSuccessMessage && <SuccessMessage>{successMessage}</SuccessMessage>}
+
           <LinkStyled>
             Não tem uma conta? <Link to="/SejaCadastrado">Cadastre-se</Link>
           </LinkStyled>
