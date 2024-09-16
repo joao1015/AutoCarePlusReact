@@ -69,7 +69,7 @@ const HeroSection = styled.section`
 
 const CarouselSection = styled.section`
 
-  @media (max-width: 1500px) {
+  @media (max-width: 2000px) {
   display: flex;
   justify-content: space-between;
   background-color: blue;
@@ -96,7 +96,7 @@ const CarouselSection = styled.section`
 const TextContainer = styled.div`
  
 
-  @media (max-width: 1500px){
+  @media (max-width: 2000px){
   flex: 1;
   width: 10cm;
   height: 10cm;
@@ -139,7 +139,7 @@ const TextContainer = styled.div`
 
 const ImageContainer = styled.div`
 
-  @media (max-width: 1500px){
+  @media (max-width: 2000px){
     flex: 1;
   margin-left: 1cm; /* Adiciona espaçamento entre a imagem e o container */
   img {
@@ -163,7 +163,7 @@ const ImageContainer = styled.div`
 
 const ButtonsContainer = styled.div`
 
-@media (max-width: 1500px) {
+@media (max-width: 2000px) {
   display: flex;
   justify-content: center;
   margin: 2rem 0; /* Ajuste a margem superior e inferior conforme necessário */
