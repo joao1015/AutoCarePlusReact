@@ -1,5 +1,6 @@
-# CHALLENGE - PORTO SEGURO - SPRINT 3
-
+<div style="text-align: center;">
+  # CHALLENGE - PORTO SEGURO - SPRINT 3
+</div>
 # PROJÉTO AutoCarePlusReact
 
 # GRUPO: MetaMind!
@@ -25,7 +26,6 @@
 Paulo André Carminati
 
 RM: 557881
-
 TURMA: 1TDSPZ
 
 GitHub Paulo André
