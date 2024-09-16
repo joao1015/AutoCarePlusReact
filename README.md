@@ -1,6 +1,6 @@
 ![Challenge 2024](https://drive.google.com/uc?export=view&id=1-Mpxt3PqS82cyg7so4cIwKFAkeh4-Ko0)
 
-# 🚗 FIAP-2014 / CHALLENGE - PORTO SEGURO - SPRINT 3  
+# 🚗 **FIAP-2014 / CHALLENGE - PORTO SEGURO - SPRINT 3**
 
 ## **Projeto:** AutoCarePlusReact  
 
@@ -13,13 +13,13 @@
 - **TDSPZ**  
 
 ## **Professores:**
-- **TDSPV:** Alexandre Carlos de Jesus |(https://github.com/alecarlosjesus)
-- **TDSPZ:** Caio Halbert Jacinto | (https://github.com/CaioHalbert)
+- **TDSPV:** [Alexandre Carlos de Jesus](https://github.com/alecarlosjesus)
+- **TDSPZ:** [Caio Halbert Jacinto](https://github.com/CaioHalbert)
 
 ---
 
 ## 📂 **Repositório do Projeto:**
-[Link para o repositório](https://github.com/joao1015/AutoCarePlusReact)
+[AutoCarePlusReact - Repositório](https://github.com/joao1015/AutoCarePlusReact)
 
 ---
 
