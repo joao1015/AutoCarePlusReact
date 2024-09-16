@@ -48,7 +48,7 @@ const CabecalhoContainer = styled.header`
 const Logo = styled.img`
 
 
-  @media (max-width: 1500px){
+  @media (max-width: 2000px){
     width: 30%;
     
   }
@@ -157,7 +157,7 @@ const AreaDoClienteButton = styled(Link)`
     background-color: #007bff;
     color: #ffffff;
   }
-  @media (max-width: 1500px){
+  @media (max-width: 2000px){
     width: 10cm;
     
   }
