@@ -82,7 +82,22 @@ Nossa plataforma permite encontrar oficinas credenciadas, comparar preços, temp
 2. **Escolha Desafiadora de Oficinas:**
    - Consumidores têm dificuldade em encontrar oficinas confiáveis que ofereçam serviços de qualidade, com transparência nos preços e conveniência no atendimento.
 
+## Bibliotecas Utilizadas 
 
+1. styled-components: npm install styled-components
+
+2. react-icons: npm install react-icons
+
+
+## Informações de Falhas para teste da IA
+
+1. Exemplo 1 de interação: Digite as seguintes informações no bot Marca: Volks; Modelo: Polo; Versão: MSI/MPI; Ano: "Qualquer um"; Placa: "Qualquer uma"; Digite: sim; Falhas: Sensor ABS com falha/Luz do ABS acesa/Ao girar volante apresenta barulho na direção.
+
+2. Exemplo 2 de interação: Digite as seguintes informações no bot Marca: Volks; Modelo: Virtus; Versão: MSI/TSI Comfort; Ano: "Qualquer um"; Placa: "Qualquer uma"; Digite: sim; Falhas: Sensor ABS com falha/Luz do ABS acesa/Ao girar volante apresenta barulho na direção.
+
+3. Exemplo 3 de interação: Digite as seguintes informações no bot Marca: Chevrolet; Modelo: Celta; Versão: LS/LT/Advantage; Ano: "Qualquer um"; Placa: "Qualquer uma"; Digite: sim; Falhas: Batida seca no perto da roda/Barulhos vindos da roda/Meu Celta apresenta muitos problemas de barulhos provenientes da roda
+
+Obs: a Barra "/" significa "ou" ex: LS/LT = LS ou LT
 
 
 ## Informações de Login para Oficinas Credenciadas
@@ -97,5 +112,21 @@ Nossa plataforma permite encontrar oficinas credenciadas, comparar preços, temp
 
 1. Acesse o sistema de credenciados através do link fornecido.
 2. Insira o e-mail e a senha da sua oficina conforme a tabela acima.
+
+### Acesso ao Figma
+
+1. Link de Acesso ao Figma: https://www.figma.com/design/LqyECsacKv92Y7fyMlZBiU/AutoCarePlus?node-id=0-1&node-type=canvas&t=FLThciAiR1spFadk-0
+
+E-mail: metamindsolutions@hotmail.com Senha:654321Aa!
+
+Obs: Existe 2 Pages:
+
+Page 1 se encontra o projeto antigo totalmente preservado para comparação. 
+
+Page 2 se enconta o estado atual do projeto da pagina devidamente identificado com as paletas de cores e toda estrutura visual do site.
+
+### Acesso ao Youtube com explicação do Projeto
+
+1. Link de Acesso ao Youtube: https://www.youtube.com/watch?v=_iaFEnRRnXg
 
 [🔝 Voltar ao topo](#)
