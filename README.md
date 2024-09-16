@@ -83,3 +83,18 @@ Nossa plataforma permite encontrar oficinas credenciadas, comparar preços, temp
    - Consumidores têm dificuldade em encontrar oficinas confiáveis que ofereçam serviços de qualidade, com transparência nos preços e conveniência no atendimento.
 
 [🔝 Voltar ao topo](#)
+
+
+## Informações de Login para Oficinas Credenciadas
+
+| Nome da Oficina           | E-mail                   | Senha  |
+|---------------------------|--------------------------|--------|
+| Oficina AutoTech           | oficina1@example.com     | 123    |
+| Oficina Mecânica Rápida    | oficina2@example.com     | 123    |
+| Oficina SuperCar           | oficina3@example.com     | 123    |
+
+### Instruções de Acesso
+
+1. Acesse o sistema de credenciados através do link fornecido.
+2. Insira o e-mail e a senha da sua oficina conforme a tabela acima.
+
