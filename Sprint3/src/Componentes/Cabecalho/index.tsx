@@ -25,6 +25,7 @@ const CabecalhoContainer = styled.header`
     border-bottom: 2px solid #007bff;
   }
 
+
   @media (max-width: 1028px) {
     height: 10cm;
     flex-direction: column;
@@ -47,8 +48,17 @@ const CabecalhoContainer = styled.header`
 
 const Logo = styled.img`
 
-
-  @media (max-width: 2000px){
+@media (max-width: 2600px){
+    width: 14%;
+    
+    
+  }
+  @media (max-width: 2200px){
+    width: 16%;
+    
+    
+  }
+  @media (max-width: 1700px){
     width: 30%;
     
   }
@@ -80,6 +90,8 @@ const NavContainer = styled.nav`
   gap: 1rem;
   flex-grow: 1;
   justify-content: flex-start;
+
+  
 
   @media (max-width: 1024px) {
   width: auto;
@@ -126,6 +138,23 @@ const NavLinkStyled = styled(NavLink)`
     color: #007bff;
   }
 
+  
+  @media (max-width: 2600px) {
+  width: auto;
+  font-size: 27px;
+} 
+
+
+@media (max-width: 2200px) {
+  width: auto;
+  font-size: 20px;
+} 
+
+@media (max-width: 1700px) {
+  width: auto;
+  font-size: 20px;
+} 
+
   @media (max-width: 1024px) {
   width: auto;
   font-size: 22px;
@@ -157,8 +186,22 @@ const AreaDoClienteButton = styled(Link)`
     background-color: #007bff;
     color: #ffffff;
   }
-  @media (max-width: 2000px){
-    width: 10cm;
+  @media (max-width: 2600px){
+    margin-right: 3cm;
+    width: 5.2cm;
+    
+  }
+
+  @media (max-width: 2200px){
+    margin-left: 2cm;
+    width: 6cm;
+    
+  }
+
+  @media (max-width: 1700px){
+    width: 14cm;
+    margin-left: 0cm;
+    margin-right: 0cm;
     
   }
 
