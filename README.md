@@ -14,7 +14,7 @@
 
 ## **Professores:**
 - **TDSPV:** Alexandre Carlos de Jesus
-- **TDSPZ:** Caio Halbert Jacinto
+- **TDSPZ:** Caio Halbert Jacinto | (https://github.com/CaioHalbert)
 
 ---
 
