@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import playStoreImg from './Imagens/Google Play.png';
-import appStoreImg from './Imagens/AppStore.png';
 
 
 // Styled Component para o rodapé
@@ -16,6 +14,11 @@ const RodapeContainer = styled.footer`
   box-sizing: border-box;
   border-top: 1px solid #000000;
   padding: 20px 0;
+
+  @media (max-width: 425px) {
+    font-size: 12px; /* Reduz o tamanho da fonte para telas menores */
+    padding: 10px 0; /* Ajusta o padding */
+  }
 `;
 
 // Container para a estrutura do rodapé
@@ -25,6 +28,11 @@ const RodapeContent = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 425px) {
+    max-width: 100%;
+    padding: 0 15px; /* Ajusta o padding para telas menores */
+  }
 `;
 
 // Estilos para os links
@@ -36,8 +44,13 @@ const RodapeLinks = styled.div`
     color: #ffffff;
     text-decoration: none;
     margin: 0 10px;
+
     &:hover {
       text-decoration: underline;
+    }
+
+    @media (max-width: 425px) {
+      margin: 0 5px; /* Diminui o espaçamento entre os links */
     }
   }
 `;
@@ -49,6 +62,10 @@ const AppButtons = styled.div`
   img {
     width: 120px;
     margin: 0 10px;
+
+    @media (max-width: 425px) {
+      width: 100px; /* Reduz o tamanho das imagens dos botões */
+    }
   }
 `;
 
@@ -61,6 +78,11 @@ const SocialLinks = styled.div`
     margin: 0 10px;
     font-size: 18px;
     text-decoration: none;
+
+    @media (max-width: 425px) {
+      font-size: 16px; /* Reduz o tamanho das fontes para os ícones de redes sociais */
+      margin: 0 5px; /* Diminui o espaçamento entre os ícones */
+    }
   }
 `;
 

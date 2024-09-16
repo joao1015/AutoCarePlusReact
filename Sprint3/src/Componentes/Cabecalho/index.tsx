@@ -170,8 +170,10 @@ const AreaDoClienteButton = styled(Link)`
   }
 
   @media (max-width: 530px) { 
-    padding: 0.3rem 1rem;
+    padding: -1rem 1rem;
     font-size: 12px;
+    width: 3.5cm;
+
   }
 `;
 
