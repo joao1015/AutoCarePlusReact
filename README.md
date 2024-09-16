@@ -19,7 +19,7 @@
 ---
 
 ## 📂 **Repositório do Projeto:**
-[Link para o repositório]([https://github.com/ArthurBispo00/Projeto_Oceanos_Limpos](https://github.com/joao1015/AutoCarePlusReact/tree/main))
+[Link para o repositório](https://github.com/joao1015/AutoCarePlusReact)
 
 ---
 
