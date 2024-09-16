@@ -46,7 +46,7 @@ const HeroSection = styled.section`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 770px) {
     padding: 2rem 1rem;
     h2 {
       font-size: 0.7cm;
@@ -87,7 +87,7 @@ const CarouselSection = styled.section`
     
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 770px) {
     flex-direction: column;
     align-items: center;
   }
@@ -127,7 +127,7 @@ const TextContainer = styled.div`
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 770px) {
     h2 {
       font-size: 1cm;
     }
@@ -316,7 +316,7 @@ const Tip = styled.div`
     color: #333;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 770px) {
     width: 45%; /* Adapta as dicas para telas menores */
   }
 

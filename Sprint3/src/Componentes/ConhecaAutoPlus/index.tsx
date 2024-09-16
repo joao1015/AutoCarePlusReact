@@ -24,7 +24,13 @@ const DiagramSection = styled.div`
   display: flex;
   justify-content: space-around;
   margin-bottom: 2rem;
+
+  @media (max-width: 430px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
+
 
 const DiagramContainer = styled.div`
   display: flex;

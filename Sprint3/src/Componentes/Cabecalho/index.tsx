@@ -25,7 +25,7 @@ const CabecalhoContainer = styled.header`
     border-bottom: 2px solid #007bff;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1028px) {
     height: 10cm;
     flex-direction: column;
     justify-content: center;
@@ -33,11 +33,11 @@ const CabecalhoContainer = styled.header`
     width: auto;
   }
 
-  @media (max-width: 800px) { 
+  @media (max-width: 770px) { 
     height: 1cm;
   }
 
-  @media (max-width: 530px) { 
+  @media (max-width: 430px) { 
     padding: 1rem;  
     height: auto ;
       
@@ -53,7 +53,7 @@ const Logo = styled.img`
     
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1028px) {
     width: 20%;
     cursor: pointer;
     height: 5cm;
@@ -61,14 +61,14 @@ const Logo = styled.img`
     margin-left: 0.5cm;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 770px) {
     width: 3.5cm;
     height: 3.5cm;
  
 
   }
 
-  @media (max-width: 530px) { 
+  @media (max-width: 430px) { 
     width: 4cm;
     height: 4cm;
   }
@@ -85,7 +85,7 @@ const NavContainer = styled.nav`
   width: auto;
 }
 
-  @media (max-width: 800px) {
+  @media (max-width: 770px) {
 
     width: auto;
     height: 3cm;
@@ -93,7 +93,7 @@ const NavContainer = styled.nav`
 
   }
 
-  @media (max-width: 530px) {
+  @media (max-width: 430px) {
 
     justify-content: center;
     flex-direction: column;
@@ -131,12 +131,12 @@ const NavLinkStyled = styled(NavLink)`
   font-size: 22px;
 } 
 
-  @media (max-width: 800px) {
+  @media (max-width: 770px) {
     font-size: 14px;
 
   }
 
-  @media (max-width: 530px) { 
+  @media (max-width: 430px) { 
     font-size: 12px;
     padding: 0.5rem;
   }
@@ -169,14 +169,14 @@ const AreaDoClienteButton = styled(Link)`
     margin-left: 0.7cm;
   }
 
-  @media (max-width: 800px) {
+  @media (max-width: 770px) {
     font-size: 12px;
     width: 3cm;
     margin-bottom: 0.5cm;
     width: 3.5cm;
   }
 
-  @media (max-width: 530px) { 
+  @media (max-width: 430px) { 
     padding: -1rem 1rem;
     font-size: 12px;
     width: 3.5cm;
