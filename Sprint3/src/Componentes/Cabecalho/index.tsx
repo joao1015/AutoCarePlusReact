@@ -122,11 +122,11 @@ const NavLinkStyled = styled(NavLink)`
 
   @media (max-width: 1024px) {
   width: auto;
-  font-size: 17px;
+  font-size: 22px;
 } 
 
   @media (max-width: 800px) {
-    font-size: 10px;
+    font-size: 14px;
 
   }
 
@@ -163,16 +163,17 @@ const AreaDoClienteButton = styled(Link)`
   }
 
   @media (max-width: 800px) {
-    font-size: 10px;
+    font-size: 12px;
     width: 3cm;
-    margin-bottom: 1cm;
-    width: 3.1cm;
+    margin-bottom: 0.5cm;
+    width: 3.5cm;
   }
 
   @media (max-width: 530px) { 
     padding: -1rem 1rem;
     font-size: 12px;
     width: 3.5cm;
+    margin-right: 0.5cm;
 
   }
 `;
