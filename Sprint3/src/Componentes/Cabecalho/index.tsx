@@ -46,25 +46,31 @@ const CabecalhoContainer = styled.header`
 `;
 
 const Logo = styled.img`
-  height: auto;
-  width: 20%;
-  cursor: pointer;
+
+
+  @media (max-width: 1500px){
+    width: 30%;
+    
+  }
 
   @media (max-width: 1024px) {
+    width: 20%;
+    cursor: pointer;
     height: 5cm;
     width: 6cm;
-    margin-left: 1.5cm;
+    margin-left: 0.5cm;
   }
 
   @media (max-width: 800px) {
-    width: 3cm;
-    height: 3cm;
+    width: 3.5cm;
+    height: 3.5cm;
  
 
   }
 
   @media (max-width: 530px) { 
-    margin-right: 1.3cm;
+    width: 4cm;
+    height: 4cm;
   }
 `;
 
@@ -83,7 +89,7 @@ const NavContainer = styled.nav`
 
     width: auto;
     height: 3cm;
-    margin-left: 1cm;
+    
 
   }
 
@@ -152,6 +158,7 @@ const AreaDoClienteButton = styled(Link)`
     color: #ffffff;
   }
   @media (max-width: 1500px){
+    width: 10cm;
     
   }
 

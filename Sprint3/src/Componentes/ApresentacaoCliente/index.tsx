@@ -35,6 +35,7 @@ const HeroSection = styled.section`
     font-size: 0.5cm;
   }
 
+
   @media (max-width: 1028px) {
     padding: 4rem 2rem;
     h2 {
@@ -67,15 +68,22 @@ const HeroSection = styled.section`
 `;
 
 const CarouselSection = styled.section`
+
+  @media (max-width: 1500px) {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   background-color: blue;
-  width: 100%;
-  padding: 2rem 0;
+  align-items: center;
+  height: 100%; /* Ajuste para preencher o container */
+  width: 100%; /* Ajuste para ocupar toda a largura */
+  }
   
   @media (max-width: 1028px) {
     width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
     
   }
 
@@ -86,21 +94,31 @@ const CarouselSection = styled.section`
 `;
 
 const TextContainer = styled.div`
-  width: 100%;
-  padding: 0 1cm;
-  color: white;
-  text-align: left;
+ 
+
+  @media (max-width: 1500px){
+  flex: 1;
+  width: 10cm;
+  height: 10cm;
+  padding-left: 1cm;
+  color: #FFFF;
   h2 {
     font-size: 1.75cm;
     margin-bottom: 1rem;
-    
   }
   p {
     font-size: 0.75cm;
-   
+    color: #FFFF;
+  }
+
   }
 
   @media (max-width: 1028px) {
+    width: 100%;
+    padding: 0 1cm;
+    color: white;
+    text-align: left;
+
     h2 {
       font-size: 1.2cm;
     }
@@ -120,23 +138,56 @@ const TextContainer = styled.div`
 `;
 
 const ImageContainer = styled.div`
-  margin: 1rem 0;
+
+  @media (max-width: 1500px){
+    flex: 1;
+  margin-left: 1cm; /* Adiciona espaçamento entre a imagem e o container */
+  img {
+    width: 20cm;
+    height: 15cm;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  }
+ 
+
+  @media (max-width: 1028px) {
+    margin: 1rem 0;
   img {
     width: 100%;
     height: auto;
-    max-width: 600px; /* Ajuste para manter proporções em telas menores */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
   }
-
-  @media (max-width: 1028px) {
-    img {
-      max-width: 100%;
-    }
-  }
+}
 `;
 
 const ButtonsContainer = styled.div`
+
+@media (max-width: 1500px) {
   display: flex;
+  justify-content: center;
+  margin: 2rem 0; /* Ajuste a margem superior e inferior conforme necessário */
+  button {
+    background-color: #808080;
+    border: none;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px; /* Espaçamento horizontal entre os botões */
+    cursor: pointer;
+    border-radius: 50%; /* Torna os botões redondos */
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    &:hover {
+      background-color: blue;
+    }
+  }
+}
+
+  @media (max-width: 1028px) {
+    display: flex;
   justify-content: center;
   margin-top: 2rem;
   button {
@@ -153,8 +204,6 @@ const ButtonsContainer = styled.div`
       background-color: blue;
     }
   }
-
-  @media (max-width: 1028px) {
     button {
       margin: 0 5px;
     }
@@ -175,6 +224,7 @@ const InfoSection = styled.section`
     max-width: 800px;
     margin: 0 auto;
   }
+  
 `;
 
 const HighlightedButton = styled.a`
@@ -308,6 +358,7 @@ const HomePage = () => {
         <ImageContainer>
           <img src={slides[currentImageIndex].image} alt="Banner AutoCarePlus" />
         </ImageContainer>
+        </CarouselSection>
         <ButtonsContainer>
           {slides.map((_, index) => (
             <button
@@ -317,7 +368,6 @@ const HomePage = () => {
             />
           ))}
         </ButtonsContainer>
-      </CarouselSection>
 
       <InfoSection>
         <h3>Com a AutoCarePlus, você tem:</h3>
