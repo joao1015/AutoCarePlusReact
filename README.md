@@ -1,4 +1,4 @@
-![Challenge 2024]([https://caminho_da_imagem_no_repositorio/image.png](https://drive.google.com/file/d/1-Mpxt3PqS82cyg7so4cIwKFAkeh4-Ko0/view?usp=drive_link))
+![Challenge 2024](https://drive.google.com/uc?export=view&id=1-Mpxt3PqS82cyg7so4cIwKFAkeh4-Ko0)
 # 🚗 FIAP-2014 / CHALLENGE - PORTO SEGURO - SPRINT 3  
 
 ## **Projeto:** AutoCarePlusReact  
