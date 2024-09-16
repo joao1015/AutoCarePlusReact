@@ -1,4 +1,5 @@
 ![Challenge 2024](https://drive.google.com/uc?export=view&id=1-Mpxt3PqS82cyg7so4cIwKFAkeh4-Ko0)
+
 # 🚗 FIAP-2014 / CHALLENGE - PORTO SEGURO - SPRINT 3  
 
 ## **Projeto:** AutoCarePlusReact  
@@ -24,11 +25,11 @@
 
 ## 👥 **Equipe:**
 
-| Nome                        | RM      | Turma   | GitHub                                          |
-|-----------------------------|---------|---------|-------------------------------------------------|
-| **Arthur Bispo de Lima**     | 557568  | 1TDSPV  | [GitHub Arthur](https://github.com/ArthurBispo00?tab=repositories) |
-| **João Paulo Moreira**       | 557808  | 1TDSPV  | [GitHub João Paulo](https://github.com/joao1015?tab=repositories) |
-| **Paulo André Carminati**    | 557881  | 1TDSPZ  | [GitHub Paulo André](https://github.com/carmipa) |
+| Nome                        | RM      | Turma   | GitHub                                          | Foto                                          |
+|-----------------------------|---------|---------|-------------------------------------------------|-----------------------------------------------|
+| **Arthur Bispo de Lima**     | 557568  | 1TDSPV  | [GitHub Arthur](https://github.com/ArthurBispo00?tab=repositories) | ![Arthur Bispo](https://drive.google.com/uc?export=view&id=1qkq69PTvJU6VSS_cWNDiyknRQSCBUakg) |
+| **João Paulo Moreira**       | 557808  | 1TDSPV  | [GitHub João Paulo](https://github.com/joao1015?tab=repositories) | ![João Paulo](https://drive.google.com/uc?export=view&id=1wxoVt-5v4ifCAGZHkINnNNZuMXSqowpz) |
+| **Paulo André Carminati**    | 557881  | 1TDSPZ  | [GitHub Paulo André](https://github.com/carmipa) | ![Paulo André](https://drive.google.com/uc?export=view&id=19bA5l9huX-K2Kkr7uHWHl4tjGjR6ssSZ) |
 
 ---
 
@@ -55,4 +56,3 @@ Nossa plataforma permite encontrar oficinas credenciadas, comparar preços, temp
 2. **Escolha Desafiadora de Oficinas:** Encontrar oficinas confiáveis, com serviços de qualidade, transparência nos preços e conveniência no atendimento, pode ser um grande desafio para os consumidores.
 
 ---
-
