@@ -89,9 +89,9 @@ Nossa plataforma permite encontrar oficinas credenciadas, comparar preços, temp
 
 | Nome da Oficina           | E-mail                   | Senha  |
 |---------------------------|--------------------------|--------|
-| Oficina AutoTech           | oficina1@example.com     | 123    |
-| Oficina Mecânica Rápida    | oficina2@example.com     | 123    |
-| Oficina SuperCar           | oficina3@example.com     | 123    |
+| Oficina Faria Lima           | oficina1@example.com     | 123    |
+| Oficina Barra funda    | oficina2@example.com     | 123    |
+| Oficina Vila Sonia           | oficina3@example.com     | 123    |
 
 ### Instruções de Acesso
 
