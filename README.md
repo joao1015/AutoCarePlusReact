@@ -1,11 +1,11 @@
-<div style="text-align: center;">
-  # CHALLENGE - PORTO SEGURO - SPRINT 3
-</div>
-# PROJÉTO AutoCarePlusReact
 
-# GRUPO: MetaMind!
+  #          CHALLENGE - PORTO SEGURO - SPRINT 3  
 
-## TDSPV / TDSPZ
+# PROJÉTO AutoCarePlusReact  
+
+# GRUPO: MetaMind!  
+
+## TDSPV / TDSPZ  
 
 ## PROFESSORES:
 ## TDSPV - Alexandre Carlos de Jesus
