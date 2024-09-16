@@ -28,11 +28,11 @@ const HeroSection = styled.section`
   background-color: #ececec;
   width: 100%;
   h2 {
-    font-size: 1cm;
+    font-size: 1.5cm;
     margin-bottom: 1rem;
   }
   p {
-    font-size: 0.5cm;
+    font-size: 0.7cm;
   }
 
 
@@ -69,7 +69,22 @@ const HeroSection = styled.section`
 
 const CarouselSection = styled.section`
 
-  @media (max-width: 2000px) {
+@media (max-width: 2600px) {
+  display: flex;
+  background-color: blue;
+  align-items: center;
+  height: 100%; /* Ajuste para preencher o container */
+  width: 100%; /* Ajuste para ocupar toda a largura */
+  }
+
+  @media (max-width: 2200px) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Ajuste para ocupar toda a largura */
+  }
+
+  @media (max-width: 1700px) {
   display: flex;
   justify-content: space-between;
   background-color: blue;
@@ -94,13 +109,31 @@ const CarouselSection = styled.section`
 `;
 
 const TextContainer = styled.div`
- 
 
-  @media (max-width: 2000px){
+@media (max-width: 2600px){
   flex: 1;
   width: 10cm;
   height: 10cm;
-  padding-left: 1cm;
+  padding-left: 2cm;
+  color: #FFFF;
+  h2 {
+    font-size: 1.75cm;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 0.75cm;
+    color: #FFFF;
+  }
+
+  }
+
+
+ 
+
+  @media (max-width: 1700px){
+  flex: 1;
+  width: 10cm;
+  height: 10cm;
   color: #FFFF;
   h2 {
     font-size: 1.75cm;
@@ -139,7 +172,27 @@ const TextContainer = styled.div`
 
 const ImageContainer = styled.div`
 
-  @media (max-width: 2000px){
+@media (max-width: 2600px){
+    flex: 1;
+  margin-left: 1cm; /* Adiciona espaçamento entre a imagem e o container */
+  img {
+    width: 35cm;
+    height: 25cm;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  }
+
+  @media (max-width: 2200px){
+  flex: 1;
+  margin-left: 1cm; /* Adiciona espaçamento entre a imagem e o container */
+  img {
+    width: 30cm;
+    height: 20cm;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  }  
+
+  @media (max-width: 1700px){
     flex: 1;
   margin-left: 1cm; /* Adiciona espaçamento entre a imagem e o container */
   img {
@@ -163,7 +216,52 @@ const ImageContainer = styled.div`
 
 const ButtonsContainer = styled.div`
 
-@media (max-width: 2000px) {
+@media (max-width: 2600px) {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0; /* Ajuste a margem superior e inferior conforme necessário */
+  button {
+    background-color: #808080;
+    border: none;   
+    width: 30px;
+    height: 30px;
+    margin: 0 10px; /* Espaçamento horizontal entre os botões */
+    cursor: pointer;
+    border-radius: 50%; /* Torna os botões redondos */
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    &:hover {
+      background-color: blue;
+    }
+  }
+}
+
+@media (max-width: 2200px) {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0; /* Ajuste a margem superior e inferior conforme necessário */
+  button {
+    background-color: #808080;
+    border: none;
+    width: 20px;
+    height: 20px;
+    margin: 0 10px; /* Espaçamento horizontal entre os botões */
+    cursor: pointer;
+    border-radius: 50%; /* Torna os botões redondos */
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    &:hover {
+      background-color: blue;
+    }
+  }
+
+@media (max-width: 1700px) {
   display: flex;
   justify-content: center;
   margin: 2rem 0; /* Ajuste a margem superior e inferior conforme necessário */
@@ -208,6 +306,7 @@ const ButtonsContainer = styled.div`
       margin: 0 5px;
     }
   }
+}
 `;
 
 const InfoSection = styled.section`
@@ -223,6 +322,38 @@ const InfoSection = styled.section`
     margin-bottom: 1rem;
     max-width: 800px;
     margin: 0 auto;
+  }
+
+  @media (max-width: 2600px){
+    padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  h3 {
+    font-size: 2cm;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 0.8cm;
+    margin-bottom: 1rem;
+    max-width: 95%;
+    margin: 0 auto;
+  }
+  }
+
+  @media (max-width: 430px){
+  padding: 4rem 2rem;
+  text-align: center;
+  background-color: #f9f9f9;
+  h3 {
+    font-size: 1cm;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 0.5cm;
+    margin-bottom: 1rem;
+    max-width: 95%;
+    margin: 0 auto;
+  }
   }
   
 `;
@@ -243,19 +374,26 @@ const HighlightedButton = styled.a`
   &:hover {
     background-color: #e63946;
   }
+
+  @media (max-width: 2600px){
+    font-size: 1.5rem;
+  }
 `;
 
 const TestimonialsSection = styled.section`
-  padding: 4rem 0;
   background-color: #f9f9f9;
   text-align: center;
+
+  h3{
+    font-size: 1cm;
+  }
 `;
 
 const TestimonialsContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 5rem;
 `;
 
 const Testimonial = styled.div`
@@ -266,15 +404,15 @@ const Testimonial = styled.div`
 `;
 
 const TestimonialImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 110%;
+  height: 110%;
   border-radius: 10px;
   object-fit: cover;
   margin-bottom: 1rem;
 `;
 
 const TestimonialText = styled.p`
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #333;
   max-width: 100%;
   margin: 0;
@@ -282,9 +420,10 @@ const TestimonialText = styled.p`
 `;
 
 const TipsSection = styled.section`
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   background-color: #e0e0e0;
   text-align: center;
+  font-size: 1cm;
 `;
 
 const TipsContainer = styled.div`
@@ -308,11 +447,11 @@ const Tip = styled.div`
     margin-bottom: 1rem;
   }
   h4 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 0.5rem;
   }
   p {
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #333;
   }
 
@@ -378,10 +517,6 @@ const HomePage = () => {
       <TestimonialsSection>
         <h3>O que nossos clientes dizem:</h3>
         <TestimonialsContainer>
-          <Testimonial>
-            <TestimonialImage src={testimonial1} alt="Depoimento Cliente 1" />
-            <TestimonialText>"A plataforma ajudou muito a encontrar uma oficina de confiança."</TestimonialText>
-          </Testimonial>
           <Testimonial>
             <TestimonialImage src={testimonial2} alt="Depoimento Cliente 2" />
             <TestimonialText>"Diagnosticar a falha do carro nunca foi tão rápido e fácil."</TestimonialText>
