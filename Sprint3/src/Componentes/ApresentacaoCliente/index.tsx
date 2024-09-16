@@ -8,10 +8,12 @@ import image5 from './imagens/Troca de Óleo.png';
 import testimonial1 from './imagens/Depoimento 1.png';
 import testimonial2 from './imagens/Depoimento 2.png';
 import testimonial3 from './imagens/Depoimento 3.png';
-import tip1 from './imagens/DICA 1.png'; // Imagem para Dica 1
-import tip2 from './imagens/DICA 2.png'; // Imagem para Dica 2
-import tip3 from './imagens/DICA 3.png'; // Imagem para Dica 3
-import tip4 from './imagens/DICA 4.png'; // Imagem para Dica 4
+import tip1 from './imagens/DICA 1.png'; 
+import tip2 from './imagens/DICA 2.png'; 
+import tip3 from './imagens/DICA 3.png'; 
+import tip4 from './imagens/DICA 4.png'; 
+
+// Media Queries and Styled Components
 
 const Container = styled.div`
   font-family: 'Poppins', sans-serif;
@@ -32,62 +34,129 @@ const HeroSection = styled.section`
   p {
     font-size: 0.5cm;
   }
+
+  @media (max-width: 1028px) {
+    padding: 4rem 2rem;
+    h2 {
+      font-size: 0.8cm;
+    }
+    p {
+      font-size: 0.4cm;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 2rem 1rem;
+    h2 {
+      font-size: 0.7cm;
+    }
+    p {
+      font-size: 0.4cm;
+    }
+  }
+
+  @media (max-width: 430px) {
+    padding: 1.5rem 1rem;
+    h2 {
+      font-size: 0.6cm;
+    }
+    p {
+      font-size: 0.3cm;
+    }
+  }
 `;
 
 const CarouselSection = styled.section`
   display: flex;
-  justify-content: space-between;
-  background-color: blue;
+  flex-direction: column;
   align-items: center;
-  height: 100%; /* Ajuste para preencher o container */
-  width: 100%; /* Ajuste para ocupar toda a largura */
+  background-color: blue;
+  width: 100%;
+  padding: 2rem 0;
+  
+  @media (max-width: 1028px) {
+    width: 100%;
+    
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const TextContainer = styled.div`
-  flex: 1;
-  width: 10cm;
-  height: 10cm;
-  padding-left: 1cm;
-  color: #FFFF;
+  width: 100%;
+  padding: 0 1cm;
+  color: white;
+  text-align: left;
   h2 {
     font-size: 1.75cm;
     margin-bottom: 1rem;
+    
   }
   p {
     font-size: 0.75cm;
-    color: #FFFF;
+   
+  }
+
+  @media (max-width: 1028px) {
+    h2 {
+      font-size: 1.2cm;
+    }
+    p {
+      font-size: 0.6cm;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 1cm;
+    }
+    p {
+      font-size: 0.5cm;
+    }
   }
 `;
 
 const ImageContainer = styled.div`
-  flex: 1;
-  margin-left: 1cm; /* Adiciona espaçamento entre a imagem e o container */
+  margin: 1rem 0;
   img {
-    width: 20cm;
-    height: 15cm;
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Ajuste para manter proporções em telas menores */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 1028px) {
+    img {
+      max-width: 100%;
+    }
   }
 `;
 
 const ButtonsContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 2rem 0; /* Ajuste a margem superior e inferior conforme necessário */
+  margin-top: 2rem;
   button {
     background-color: #808080;
     border: none;
     width: 20px;
     height: 20px;
-    margin: 0 10px; /* Espaçamento horizontal entre os botões */
+    margin: 0 10px;
     cursor: pointer;
-    border-radius: 50%; /* Torna os botões redondos */
+    border-radius: 50%;
     transition: background-color 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.75rem;
+
     &:hover {
       background-color: blue;
+    }
+  }
+
+  @media (max-width: 1028px) {
+    button {
+      margin: 0 5px;
     }
   }
 `;
@@ -106,19 +175,11 @@ const InfoSection = styled.section`
     max-width: 800px;
     margin: 0 auto;
   }
-  a {
-    color: #003366;
-    text-decoration: none;
-    font-weight: bold;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
 `;
 
 const HighlightedButton = styled.a`
   display: block;
-  background-color: #ff4500; /* Laranja chamativo */
+  background-color: #ff4500;
   color: #ffffff;
   padding: 1rem 2rem;
   margin: 2rem auto;
@@ -128,8 +189,9 @@ const HighlightedButton = styled.a`
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.3s ease;
+  
   &:hover {
-    background-color: #e63946; /* Cor mais escura no hover */
+    background-color: #e63946;
   }
 `;
 
@@ -143,11 +205,11 @@ const TestimonialsContainer = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem; /* Espaçamento entre os depoimentos */
+  gap: 2rem;
 `;
 
 const Testimonial = styled.div`
-  width: 250px; /* Tamanho fixo para os depoimentos */
+  width: 250px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -156,8 +218,8 @@ const Testimonial = styled.div`
 const TestimonialImage = styled.img`
   width: 100%;
   height: 100%;
-  border-radius: 10px; /* Ajuste a borda conforme preferir */
-  object-fit: cover; /* Mantém a proporção da imagem sem distorção */
+  border-radius: 10px;
+  object-fit: cover;
   margin-bottom: 1rem;
 `;
 
@@ -203,35 +265,23 @@ const Tip = styled.div`
     font-size: 1rem;
     color: #333;
   }
+
+  @media (max-width: 768px) {
+    width: 45%; /* Adapta as dicas para telas menores */
+  }
+
+  @media (max-width: 430px) {
+    width: 100%;
+  }
 `;
 
 const HomePage = () => {
   const slides = [
-    {
-      image: image1,
-      title: "Banner AutoCarePlus",
-      description: "Transforme a gestão da sua oficina com nossa plataforma completa."
-    },
-    {
-      image: image2,
-      title: "Manutenção Corretiva",
-      description: "Soluções rápidas para problemas inesperados nos veículos."
-    },
-    {
-      image: image3,
-      title: "Manutenção Preventiva",
-      description: "Prevenção é o melhor caminho. Mantenha seus veículos em dia."
-    },
-    {
-      image: image4,
-      title: "Melhores Peças",
-      description: "Trabalhamos apenas com as melhores peças do mercado."
-    },
-    {
-      image: image5,
-      title: "Troca de Óleo",
-      description: "Oferecemos serviços especializados de troca de óleo."
-    }
+    { image: image1, title: "Banner AutoCarePlus", description: "Transforme a gestão da sua oficina com nossa plataforma completa." },
+    { image: image2, title: "Manutenção Corretiva", description: "Soluções rápidas para problemas inesperados nos veículos." },
+    { image: image3, title: "Manutenção Preventiva", description: "Prevenção é o melhor caminho. Mantenha seus veículos em dia." },
+    { image: image4, title: "Melhores Peças", description: "Trabalhamos apenas com as melhores peças do mercado." },
+    { image: image5, title: "Troca de Óleo", description: "Oferecemos serviços especializados de troca de óleo." }
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -240,7 +290,6 @@ const HomePage = () => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, 3000);
-
     return () => clearInterval(interval);
   }, [slides.length]);
 
@@ -257,68 +306,68 @@ const HomePage = () => {
           <p>{slides[currentImageIndex].description}</p>
         </TextContainer>
         <ImageContainer>
-          <img src={slides[currentImageIndex].image} alt={slides[currentImageIndex].title} />
+          <img src={slides[currentImageIndex].image} alt="Banner AutoCarePlus" />
         </ImageContainer>
+        <ButtonsContainer>
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImageIndex(index)}
+              style={{ backgroundColor: index === currentImageIndex ? 'blue' : 'gray' }}
+            />
+          ))}
+        </ButtonsContainer>
       </CarouselSection>
 
-      <ButtonsContainer>
-        {slides.map((slide, index) => (
-          <button key={index} onClick={() => setCurrentImageIndex(index)}>
-            {index + 1}
-          </button>
-        ))}
-      </ButtonsContainer>
-
       <InfoSection>
-        <h3>Como Funciona Nossa Solução de IA</h3>
-        <p>Nosso sistema utiliza Inteligência Artificial para fornecer diagnósticos rápidos e precisos para seu veículo. Basta inserir as informações do seu carro, e nossa IA irá analisar e oferecer um diagnóstico, estimar o custo do reparo e localizar as oficinas mais próximas para você. Experimente a tecnologia que transforma a manutenção do seu veículo!</p>
-        <a href="/ConhecaAuto">Saiba Mais sobre Nossa Tecnologia</a>
-        <HighlightedButton href="/entrar">Clique Aqui para Acessar Nossa Inovação</HighlightedButton>
+        <h3>Com a AutoCarePlus, você tem:</h3>
+        <p>Assistência completa para realizar manutenções corretivas e preventivas, além de contar com uma rede de oficinas credenciadas e a segurança de utilizar peças novas ou renovadas com garantia.</p>
+        <HighlightedButton href="/clientes">Área do Cliente</HighlightedButton>
       </InfoSection>
 
-      <TipsSection>
-        <h2>Por Que Utilizar Nossos Serviços?</h2>
-        <TipsContainer>
-          <Tip>
-            <img src={tip1} alt="Dica 1" />
-            <h4>Diagnóstico Preciso</h4>
-            <p>Utilizamos IA avançada para oferecer diagnósticos rápidos e precisos, ajudando você a resolver problemas com eficiência.</p>
-          </Tip>
-          <Tip>
-            <img src={tip2} alt="Dica 2" />
-            <h4>Reduza o Tempo de Espera</h4>
-            <p>Encontre as oficinas mais próximas e agende seu serviço sem complicações, economizando tempo e evitando transtornos.</p>
-          </Tip>
-          <Tip>
-            <img src={tip3} alt="Dica 3" />
-            <h4>Peças de Qualidade</h4>
-            <p>Trabalhamos com as melhores peças do mercado, garantindo a durabilidade e a performance do seu veículo.</p>
-          </Tip>
-          <Tip>
-            <img src={tip4} alt="Dica 4" />
-            <h4>Atendimento Personalizado</h4>
-            <p>Oferecemos um atendimento personalizado para atender às suas necessidades específicas, com soluções feitas sob medida.</p>
-          </Tip>
-        </TipsContainer>
-      </TipsSection>
-
       <TestimonialsSection>
-        <h2>O que nossos clientes dizem</h2>
+        <h3>O que nossos clientes dizem:</h3>
         <TestimonialsContainer>
           <Testimonial>
-            <TestimonialImage src={testimonial1} alt="Cliente 1" />
-            <TestimonialText>“A AutoCarePlus transformou a forma como mantenho meu carro. O diagnóstico rápido e preciso ajudou a economizar tempo e dinheiro!” – João S.</TestimonialText>
+            <TestimonialImage src={testimonial1} alt="Depoimento Cliente 1" />
+            <TestimonialText>"A plataforma ajudou muito a encontrar uma oficina de confiança."</TestimonialText>
           </Testimonial>
           <Testimonial>
-            <TestimonialImage src={testimonial2} alt="Cliente 2" />
-            <TestimonialText>“A tecnologia de IA da AutoCarePlus é impressionante. Fiquei surpreso com a precisão do diagnóstico e a facilidade de encontrar uma oficina perto de mim.” – Juliana L.</TestimonialText>
+            <TestimonialImage src={testimonial2} alt="Depoimento Cliente 2" />
+            <TestimonialText>"Diagnosticar a falha do carro nunca foi tão rápido e fácil."</TestimonialText>
           </Testimonial>
           <Testimonial>
-            <TestimonialImage src={testimonial3} alt="Cliente 3" />
-            <TestimonialText>“Excelente serviço! Recebi o valor do reparo em tempo real e pude agendar o serviço sem complicações. Recomendo a todos!” – Maria A.</TestimonialText>
+            <TestimonialImage src={testimonial3} alt="Depoimento Cliente 3" />
+            <TestimonialText>"Consegui agendar e realizar o serviço em tempo recorde!"</TestimonialText>
           </Testimonial>
         </TestimonialsContainer>
       </TestimonialsSection>
+
+      <TipsSection>
+        <h3>Dicas de Manutenção:</h3>
+        <TipsContainer>
+          <Tip>
+            <img src={tip1} alt="Dica 1" />
+            <h4>Troca de Óleo</h4>
+            <p>Mantenha o óleo do seu carro sempre em dia para evitar problemas.</p>
+          </Tip>
+          <Tip>
+            <img src={tip2} alt="Dica 2" />
+            <h4>Freios</h4>
+            <p>Verifique o sistema de freios regularmente para garantir sua segurança.</p>
+          </Tip>
+          <Tip>
+            <img src={tip3} alt="Dica 3" />
+            <h4>Pneus</h4>
+            <p>Faça o rodízio dos pneus a cada 10 mil km e mantenha a calibragem adequada.</p>
+          </Tip>
+          <Tip>
+            <img src={tip4} alt="Dica 4" />
+            <h4>Bateria</h4>
+            <p>Evite surpresas e troque a bateria do carro a cada dois anos.</p>
+          </Tip>
+        </TipsContainer>
+      </TipsSection>
     </Container>
   );
 };

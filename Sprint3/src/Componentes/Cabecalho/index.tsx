@@ -5,7 +5,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { FiHome, FiInfo, FiTool, FiUser } from 'react-icons/fi';
 import { FaCar } from 'react-icons/fa';
 
-// Styled Components corrigidos
+// Styled Components
 const CabecalhoContainer = styled.header`
   position: relative;
   top: 0;
@@ -20,30 +20,84 @@ const CabecalhoContainer = styled.header`
   box-sizing: border-box;
   z-index: 1000;
   border-bottom: 2px solid #000000;
-  margin-right: 50px;
-  margin-top: -10px;
 
   &:hover {
     border-bottom: 2px solid #007bff;
+  }
+
+  @media (max-width: 1024px) {
+    height: 10cm;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem;
+    width: auto;
+  }
+
+  @media (max-width: 800px) { 
+    height: 1cm;
+  }
+
+  @media (max-width: 530px) { 
+    padding: 1rem;  
+    height: auto ;
+      
+
   }
 `;
 
 const Logo = styled.img`
   height: auto;
-  width: 23%;
+  width: 20%;
   cursor: pointer;
-  background-color: #000000;
-  margin-top: 0.3cm;
-  margin-right: 1cm;
-  margin-left: -0.4cm;
+
+  @media (max-width: 1024px) {
+    height: 5cm;
+    width: 6cm;
+    margin-left: 1.5cm;
+  }
+
+  @media (max-width: 800px) {
+    width: 3cm;
+    height: 3cm;
+ 
+
+  }
+
+  @media (max-width: 530px) { 
+    margin-right: 1.3cm;
+  }
 `;
 
 const NavContainer = styled.nav`
   display: flex;
   align-items: center;
   gap: 1rem;
-  flex-grow: 1; /* Faz o menu ocupar o espaço disponível */
-  justify-content: flex-start; /* Alinha os links à esquerda */
+  flex-grow: 1;
+  justify-content: flex-start;
+
+  @media (max-width: 1024px) {
+  width: auto;
+}
+
+  @media (max-width: 800px) {
+
+    width: auto;
+    height: 3cm;
+    margin-left: 1cm;
+
+  }
+
+  @media (max-width: 530px) {
+
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    height: auto;
+    margin-left: 0cm;
+    
+   
+  }
 `;
 
 const NavLinkStyled = styled(NavLink)`
@@ -54,7 +108,7 @@ const NavLinkStyled = styled(NavLink)`
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 17px;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   font-weight: bold;
 
@@ -65,23 +119,59 @@ const NavLinkStyled = styled(NavLink)`
   &:hover {
     color: #007bff;
   }
+
+  @media (max-width: 1024px) {
+  width: auto;
+  font-size: 17px;
+} 
+
+  @media (max-width: 800px) {
+    font-size: 10px;
+
+  }
+
+  @media (max-width: 530px) { 
+    font-size: 12px;
+    padding: 0.5rem;
+  }
 `;
 
 const AreaDoClienteButton = styled(Link)`
   background-color: #ffffff;
   color: #007bff;
-  border: 3px solid #007bff;
-  padding: 1px 25px; 
+  border: 2px solid #007bff;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
   font-weight: bold;
-  margin-left: auto; 
   transition: background-color 0.3s ease, color 0.3s ease;
 
   &:hover {
     background-color: #007bff;
     color: #ffffff;
+  }
+  @media (max-width: 1500px){
+    
+  }
+
+  @media (max-width: 1024px) {
+    height: 1cm;
+    width: 4.5cm;
+    margin-top: 0.6cm;
+    margin-left: 0.7cm;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 10px;
+    width: 3cm;
+    margin-bottom: 1cm;
+    width: 3.1cm;
+  }
+
+  @media (max-width: 530px) { 
+    padding: 0.3rem 1rem;
+    font-size: 12px;
   }
 `;
 
