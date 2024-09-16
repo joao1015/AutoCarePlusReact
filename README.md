@@ -1,39 +1,57 @@
+# 🚗 FIAP-2014 / CHALLENGE - PORTO SEGURO - SPRINT 3  
 
-#          CHALLENGE - PORTO SEGURO - SPRINT 3  
+## **Projeto:** AutoCarePlusReact  
 
-# PROJÉTO AutoCarePlusReact  
+### **Grupo:** MetaMind!  
 
-# GRUPO: MetaMind!  
+---
 
-## TRUMAS TDSPV / TDSPZ  
+## 🎓 **Turmas:** 
+- **TDSPV**
+- **TDSPZ**  
 
-## PROFESSORES:
-## TDSPV - Alexandre Carlos de Jesus
-## TDSPZ - Caio Halbert Jacinto
+## **Professores:**
+- **TDSPV:** Alexandre Carlos de Jesus
+- **TDSPZ:** Caio Halbert Jacinto
 
-# REPÓSITÓRIO DO PROJÉTO:
-## https://github.com/ArthurBispo00/Projeto_Oceanos_Limpos
+---
 
-# EQUIPE:
+## 📂 **Repositório do Projeto:**
+[Link para o repositório](https://github.com/ArthurBispo00/Projeto_Oceanos_Limpos)
 
-## Arthur Bispo de Lima
-## RM: 557568
-## TURMA: 1TDSPV
-## [GitHub Arthur](https://github.com/ArthurBispo00?tab=repositories)
+---
 
-## João Paulo Moreira dos Santos
-## RM: 557808
-## TURMA: 1TDSPV
-## [GitHub João Paulo](https://github.com/joao1015?tab=repositories)
+## 👥 **Equipe:**
 
-## Paulo André Carminati
-## RM: 557881
-## TURMA: 1TDSPZ
-## [GitHub Paulo André](https://github.com/carmipa)
+| Nome                        | RM      | Turma   | GitHub                                          |
+|-----------------------------|---------|---------|-------------------------------------------------|
+| **Arthur Bispo de Lima**     | 557568  | 1TDSPV  | [GitHub Arthur](https://github.com/ArthurBispo00?tab=repositories) |
+| **João Paulo Moreira**       | 557808  | 1TDSPV  | [GitHub João Paulo](https://github.com/joao1015?tab=repositories) |
+| **Paulo André Carminati**    | 557881  | 1TDSPZ  | [GitHub Paulo André](https://github.com/carmipa) |
 
-# SOBRE O PROJÉTO:
+---
 
-### IA para Diagnóstico de Falhas: Uma inteligência artificial que identifica falhas em veículos e oferece soluções detalhadas. Busca e Comparação de Oficinas: Plataforma que permite encontrar oficinas credenciadas, comparar preços, tempo de serviço e avaliações. Slide 3: Funcionalidades Adicionais Serviços Extras: Opção de adicionar serviços como leva e traz, alinhamento, entre outros, de forma personalizada. Escolha de Peças: Flexibilidade para escolher entre peças renovadas ou novas, conforme a preferência do cliente. Slide 4: Agendamento e Execução Processo Simples: O cliente agenda o serviço, escolhe a oficina e recebe um atendimento personalizado. Aprendizado Contínuo: As oficinas preenchem as ordens de serviço, e a IA aprimora o banco de dados, melhorando as futuras interações. Slide 1: Problema Dificuldade no Diagnóstico de Falhas: Proprietários de veículos frequentemente enfrentam obstáculos para identificar com precisão falhas em seus carros, o que leva a diagnósticos incorretos e reparos inadequados. Escolha Desafiadora de Oficinas: Consumidores enfrentam dificuldades para encontrar oficinas confiáveis que ofereçam serviços de qualidade, com transparência nos preços e conveniência no atendimento.
+## 📑 **Sobre o Projeto:**
 
+### 💡 **IA para Diagnóstico de Falhas**  
+Desenvolvemos uma inteligência artificial capaz de identificar falhas em veículos e oferecer soluções detalhadas.
 
+### 🔧 **Busca e Comparação de Oficinas**  
+Nossa plataforma permite encontrar oficinas credenciadas, comparar preços, tempo de serviço e avaliações de forma fácil e rápida.
+
+### 🛠 **Funcionalidades Adicionais**  
+- **Serviços Extras:** Personalize a experiência escolhendo serviços como leva e traz, alinhamento, entre outros.
+- **Escolha de Peças:** Opte por peças renovadas ou novas, conforme sua preferência.
+
+### 📅 **Agendamento e Execução**  
+- **Processo Simples:** O cliente agenda o serviço, escolhe a oficina e recebe atendimento personalizado.
+- **Aprendizado Contínuo:** Oficinas preenchem ordens de serviço, e a IA aprimora o banco de dados, melhorando futuras interações.
+
+---
+
+## 🚩 **Problema Identificado:**
+1. **Dificuldade no Diagnóstico de Falhas:** Muitos proprietários enfrentam dificuldades para identificar com precisão problemas em seus veículos, resultando em diagnósticos incorretos e reparos inadequados.
+2. **Escolha Desafiadora de Oficinas:** Encontrar oficinas confiáveis, com serviços de qualidade, transparência nos preços e conveniência no atendimento, pode ser um grande desafio para os consumidores.
+
+---
 
