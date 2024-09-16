@@ -82,7 +82,7 @@ Nossa plataforma permite encontrar oficinas credenciadas, comparar preços, temp
 2. **Escolha Desafiadora de Oficinas:**
    - Consumidores têm dificuldade em encontrar oficinas confiáveis que ofereçam serviços de qualidade, com transparência nos preços e conveniência no atendimento.
 
-[🔝 Voltar ao topo](#)
+
 
 
 ## Informações de Login para Oficinas Credenciadas
@@ -98,3 +98,4 @@ Nossa plataforma permite encontrar oficinas credenciadas, comparar preços, temp
 1. Acesse o sistema de credenciados através do link fornecido.
 2. Insira o e-mail e a senha da sua oficina conforme a tabela acima.
 
+[🔝 Voltar ao topo](#)
